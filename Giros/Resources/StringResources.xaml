@@ -1,0 +1,15 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+                    xmlns:system="clr-namespace:System;assembly=mscorlib">
+
+    <system:String x:Key="Close">Close</system:String>
+    <system:String x:Key="Login">Login</system:String>
+    <system:String x:Key="Chicken">Chicken</system:String>
+    <system:String x:Key="Pork">Pork</system:String>
+    <system:String x:Key="Mixed">Mixed</system:String>
+    <system:String x:Key="Next">Next</system:String>
+    <system:String x:Key="Small">Small</system:String>
+    <system:String x:Key="Medium">Medium</system:String>
+    <system:String x:Key="Large">Large</system:String>
+    
+</ResourceDictionary>

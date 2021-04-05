@@ -1,0 +1,41 @@
+﻿<Window x:Class="Giros.Login"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal"
+        TextOptions.TextRenderingMode="Auto"
+        Background="{DynamicResource MaterialDesignPaper}"
+        FontFamily="{DynamicResource MaterialDesignFont}"
+        WindowStyle="None"
+        xmlns:local="clr-namespace:Giros"
+        mc:Ignorable="d"
+        Title="Login" Height="350" Width="430">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Button Content="{DynamicResource Login}" Click="Button_Click" Margin="44,191,64,101" Height="50" HorizontalAlignment="Center" Width="103"/>
+        <TextBox x:Name="username" HorizontalAlignment="Center" Height="24" Margin="44,76,47,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <PasswordBox x:Name="password" HorizontalAlignment="Center" Height="22" Margin="44,132,47,0" VerticalAlignment="Top" Width="120"/>
+
+
+
+        <materialDesign:PackIcon Kind="Account" Margin="10,84,0,0"/>
+
+        <materialDesign:PackIcon Kind="Key" Margin="10,138,0,0"/>
+
+        <materialDesign:PackIcon Kind="Planet" Margin="10,10,0,0" />
+
+        <materialDesign:PackIcon Kind="Brush" Margin="44,10,0,0"/>
+
+        <Image Source="/Resources/Images/GirosLogin.jpg" Grid.Column="1" Stretch="Fill" Margin="0,-12,-38,-10"/>
+
+    </Grid>
+</Window>

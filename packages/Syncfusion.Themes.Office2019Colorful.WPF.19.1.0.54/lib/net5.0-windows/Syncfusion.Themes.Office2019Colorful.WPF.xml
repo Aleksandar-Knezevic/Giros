@@ -1,0 +1,161 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Syncfusion.Themes.Office2019Colorful.WPF</name>
+    </assembly>
+    <members>
+        <member name="T:Syncfusion.Themes.Office2019Colorful.WPF.Office2019ColorfulSkinHelper">
+            <exclude/>
+        </member>
+        <member name="T:Syncfusion.Themes.Office2019Colorful.WPF.Office2019ColorfulThemeSettings">
+            <summary>
+            Represents a class that holds the respective theme color and common key values for customization
+            </summary>
+        </member>
+        <member name="M:Syncfusion.Themes.Office2019Colorful.WPF.Office2019ColorfulThemeSettings.#ctor">
+            <summary>
+            Constructor to create an instance of Office2019ColorfulThemeSettings.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Themes.Office2019Colorful.WPF.Office2019ColorfulThemeSettings.HeaderFontSize">
+            <summary>
+            Gets or sets the font size of header related areas of control in selected theme
+            </summary>
+            <example>
+            <code language="C#">
+            <![CDATA[
+            Office2019ColorfulThemeSettings office2019ColorfulThemeSettings = new Office2019ColorfulThemeSettings();
+            office2019ColorfulThemeSettings.HeaderFontSize = 16;
+            ]]>
+            </code>
+            </example>
+        </member>
+        <member name="P:Syncfusion.Themes.Office2019Colorful.WPF.Office2019ColorfulThemeSettings.SubHeaderFontSize">
+            <summary>
+            Gets or sets the font size of sub header related areas of control in selected theme
+            </summary>
+            <example>
+            <code language="C#">
+            <![CDATA[
+            Office2019ColorfulThemeSettings office2019ColorfulThemeSettings = new Office2019ColorfulThemeSettings();
+            office2019ColorfulThemeSettings.SubHeaderFontSize = 14;
+            ]]>
+            </code>
+            </example>
+        </member>
+        <member name="P:Syncfusion.Themes.Office2019Colorful.WPF.Office2019ColorfulThemeSettings.TitleFontSize">
+            <summary>
+            Gets or sets the font size of title related areas of control in selected theme
+            </summary>
+            <example>
+            <code language="C#">
+            <![CDATA[
+            Office2019ColorfulThemeSettings office2019ColorfulThemeSettings = new Office2019ColorfulThemeSettings();
+            office2019ColorfulThemeSettings.TitleFontSize = 14;
+            ]]>
+            </code>
+            </example>
+        </member>
+        <member name="P:Syncfusion.Themes.Office2019Colorful.WPF.Office2019ColorfulThemeSettings.SubTitleFontSize">
+            <summary>
+            Gets or sets the font size of sub title related areas of control in selected theme
+            </summary>
+            <example>
+            <code language="C#">
+            <![CDATA[
+            Office2019ColorfulThemeSettings office2019ColorfulThemeSettings = new Office2019ColorfulThemeSettings();
+            office2019ColorfulThemeSettings.SubTitleFontSize = 12;
+            ]]>
+            </code>
+            </example>
+        </member>
+        <member name="P:Syncfusion.Themes.Office2019Colorful.WPF.Office2019ColorfulThemeSettings.BodyFontSize">
+            <summary>
+            Gets or sets the font size of content area of control in selected theme
+            </summary>
+            <example>
+            <code language="C#">
+            <![CDATA[
+            Office2019ColorfulThemeSettings office2019ColorfulThemeSettings = new Office2019ColorfulThemeSettings();
+            office2019ColorfulThemeSettings.BodyFontSize = 12;
+            ]]>
+            </code>
+            </example>
+        </member>
+        <member name="P:Syncfusion.Themes.Office2019Colorful.WPF.Office2019ColorfulThemeSettings.BodyAltFontSize">
+            <summary>
+            Gets or sets the alternate font size of content area of control in selected theme
+            </summary>
+            <example>
+            <code language="C#">
+            <![CDATA[
+            Office2019ColorfulThemeSettings office2019ColorfulThemeSettings = new Office2019ColorfulThemeSettings();
+            office2019ColorfulThemeSettings.Body AltFontSize = 10;
+            ]]>
+            </code>
+            </example>
+        </member>
+        <member name="P:Syncfusion.Themes.Office2019Colorful.WPF.Office2019ColorfulThemeSettings.FontFamily">
+            <summary>
+            Gets or sets the font family of text in control for selected theme
+            </summary>
+            <example>
+            <code language="C#">
+            <![CDATA[
+            Office2019ColorfulThemeSettings office2019ColorfulThemeSettings = new Office2019ColorfulThemeSettings();
+            office2019ColorfulThemeSettings.FontFamily = new FontFamily("Callibri");
+            ]]>
+            </code>
+            </example>
+        </member>
+        <member name="P:Syncfusion.Themes.Office2019Colorful.WPF.Office2019ColorfulThemeSettings.PrimaryBackground">
+            <summary>
+            Gets or sets the primary background color of content area of control in selected theme
+            </summary>
+            <example>
+            <code language="C#">
+            <![CDATA[
+            Office2019ColorfulThemeSettings office2019ColorfulThemeSettings = new Office2019ColorfulThemeSettings();
+            office2019ColorfulThemeSettings.PrimaryBackground = Brushes.Red;
+            ]]>
+            </code>
+            </example>
+        </member>
+        <member name="P:Syncfusion.Themes.Office2019Colorful.WPF.Office2019ColorfulThemeSettings.PrimaryForeground">
+            <summary>
+            Gets or sets the primary foreground color of content area of control in selected theme
+            </summary>
+            <example>
+            <code language="C#">
+            <![CDATA[
+            Office2019ColorfulThemeSettings office2019ColorfulThemeSettings = new Office2019ColorfulThemeSettings();
+            office2019ColorfulThemeSettings.PrimaryForeground = Brushes.AntiqueWhite;
+            ]]>
+            </code>
+            </example>
+        </member>
+        <member name="M:Syncfusion.Themes.Office2019Colorful.WPF.Office2019ColorfulThemeSettings.GetPropertyMappings">
+            <summary>
+            Helper method to decide on display property name using property mappings 
+            </summary>
+            <returns>Dictionary of property mappings</returns>
+            <exclude/>
+        </member>
+        <member name="T:Syncfusion.Office2019Colorful.Theme.Properties.Resources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Office2019Colorful.Theme.Properties.Resources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Office2019Colorful.Theme.Properties.Resources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+    </members>
+</doc>

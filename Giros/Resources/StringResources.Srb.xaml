@@ -1,0 +1,15 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:system="clr-namespace:System;assembly=mscorlib">
+
+    <system:String x:Key="Close">Zatvori</system:String>
+    <system:String x:Key="Login">Prijava</system:String>
+    <system:String x:Key="Chicken">Pileći</system:String>
+    <system:String x:Key="Pork">Svinjski</system:String>
+    <system:String x:Key="Mixed">Miješani</system:String>
+    <system:String x:Key="Next">Dalje</system:String>
+    <system:String x:Key="Small">Mali</system:String>
+    <system:String x:Key="Medium">Srednji</system:String>
+    <system:String x:Key="Large">Veliki</system:String>
+    
+</ResourceDictionary>
