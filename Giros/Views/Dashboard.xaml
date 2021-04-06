@@ -30,7 +30,10 @@
         
 
 
-        <Button Width="150" Content="{DynamicResource Next}" Click="Button_Click" Margin="304,10,353,22" Grid.Column="1" Grid.Row="2"/>
+        <Button Width="150" Content="{DynamicResource Next}" Click="Button_Click" Margin="392,10,265,22" Grid.Column="1" Grid.Row="2"/>
+
+        <Button Width="150" Content="{DynamicResource Previous}" Margin="201,10,456,22" Grid.Column="1" Grid.Row="2" Click="Button_Click_1"/>
+
 
     </Grid>
 </Window>

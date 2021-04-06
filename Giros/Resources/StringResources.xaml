@@ -11,5 +11,6 @@
     <system:String x:Key="Small">Small</system:String>
     <system:String x:Key="Medium">Medium</system:String>
     <system:String x:Key="Large">Large</system:String>
+    <system:String x:Key="Previous">Previous</system:String>
     
 </ResourceDictionary>

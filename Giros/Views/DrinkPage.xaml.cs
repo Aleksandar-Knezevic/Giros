@@ -96,5 +96,13 @@ namespace Giros.Views
             else if (regularWaterCanvas.Background == Brushes.Transparent)
                 regularWaterCanvas.Background = Brushes.LightGreen;
         }
+
+        private void orangeJuiceBackground(object sender, MouseButtonEventArgs e)
+        {
+            if (orangeJuiceCanvas.Background == Brushes.LightGreen)
+                orangeJuiceCanvas.Background = Brushes.Transparent;
+            else if (orangeJuiceCanvas.Background == Brushes.Transparent)
+                orangeJuiceCanvas.Background = Brushes.LightGreen;
+        }
     }
 }

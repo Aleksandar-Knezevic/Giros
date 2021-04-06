@@ -11,5 +11,6 @@
     <system:String x:Key="Small">Mali</system:String>
     <system:String x:Key="Medium">Srednji</system:String>
     <system:String x:Key="Large">Veliki</system:String>
+    <system:String x:Key="Previous">Nazad</system:String>
     
 </ResourceDictionary>
