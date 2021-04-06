@@ -67,3 +67,9 @@ C:\Users\aleks\OneDrive\Radna površina\C#\Giros\Giros\obj\Debug\Views\Dashboard
 C:\Users\aleks\OneDrive\Radna površina\C#\Giros\Giros\obj\Debug\Views\Dashboard.baml
 C:\Users\aleks\OneDrive\Radna površina\C#\Giros\Giros\obj\Debug\Views\TypePage.g.cs
 C:\Users\aleks\OneDrive\Radna površina\C#\Giros\Giros\obj\Debug\Views\TypePage.baml
+C:\Users\aleks\OneDrive\Radna površina\C#\Giros\Giros\obj\Debug\Views\SizePage.g.cs
+C:\Users\aleks\OneDrive\Radna površina\C#\Giros\Giros\obj\Debug\Views\SizePage.baml
+C:\Users\aleks\OneDrive\Radna površina\C#\Giros\Giros\obj\Debug\Views\SidePage.g.cs
+C:\Users\aleks\OneDrive\Radna površina\C#\Giros\Giros\obj\Debug\Views\SidePage.baml
+C:\Users\aleks\OneDrive\Radna površina\C#\Giros\Giros\obj\Debug\Views\DrinkPage.g.cs
+C:\Users\aleks\OneDrive\Radna površina\C#\Giros\Giros\obj\Debug\Views\DrinkPage.baml

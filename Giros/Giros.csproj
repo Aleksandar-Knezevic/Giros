@@ -129,9 +129,30 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Views\DrinkPage.xaml.cs">
+      <DependentUpon>DrinkPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SidePage.xaml.cs">
+      <DependentUpon>SidePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SizePage.xaml.cs">
+      <DependentUpon>SizePage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\TypePage.xaml.cs">
       <DependentUpon>TypePage.xaml</DependentUpon>
     </Compile>
+    <Page Include="Views\DrinkPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SidePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SizePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\TypePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -223,6 +244,31 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\images\gyro.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\images\cabbage.png" />
+    <Resource Include="Resources\images\cucumber.png" />
+    <Resource Include="Resources\images\fries.png" />
+    <Resource Include="Resources\images\hotSauce.png" />
+    <Resource Include="Resources\images\ketchup.png" />
+    <Resource Include="Resources\images\lettuce.png" />
+    <Resource Include="Resources\images\mayo.png" />
+    <Resource Include="Resources\images\mustard.png" />
+    <Resource Include="Resources\images\onion.png" />
+    <Resource Include="Resources\images\pepper.png" />
+    <Resource Include="Resources\images\tomato.png" />
+    <Resource Include="Resources\images\whiteSauce.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\images\appleJuice.png" />
+    <Resource Include="Resources\images\beer.png" />
+    <Resource Include="Resources\images\coke.png" />
+    <Resource Include="Resources\images\exoticKruska.png" />
+    <Resource Include="Resources\images\exoticLimeta.png" />
+    <Resource Include="Resources\images\fanta.png" />
+    <Resource Include="Resources\images\mineralWater.png" />
+    <Resource Include="Resources\images\pepsi.png" />
+    <Resource Include="Resources\images\regularWater.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

@@ -1,0 +1,31 @@
+﻿<Page x:Class="Giros.Views.SizePage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Giros.Views"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="SizePage">
+
+    <Grid Background="White">
+        <Canvas x:Name="smallCanvas" Grid.Column="1" Grid.Row="1" Margin="31,15,540,35" Width="200" MouseLeftButtonDown="selectSmallCanvas">
+            <Image Source="/Resources/images/gyro.png" Canvas.Top="61" Height="149" Width="107" Canvas.Left="42"/>
+            <Label Content="{DynamicResource Small}" Canvas.Left="83" Canvas.Top="210"></Label>
+        </Canvas>
+
+        <Canvas x:Name="mediumCanvas" Grid.Column="1" Grid.Row="1" Margin="287,15,284,35" Width="200" MouseLeftButtonDown="selectMediumCanvas">
+            <Image Source="/Resources/images/gyro.png" Canvas.Left="33" Height="163" Width="133" Canvas.Top="41"/>
+            <Label Content="{DynamicResource Medium}" Canvas.Left="83" Canvas.Top="204"></Label>
+        </Canvas>
+
+        <Canvas x:Name="largeCanvas" Grid.Column="1" Grid.Row="1" Margin="541,15,30,35" Width="200" MouseLeftButtonDown="selectLargeCanvas">
+            <Image Source="/Resources/images/gyro.png" Height="239" Width="180" Canvas.Left="10" Canvas.Top="-7"/>
+
+            <Label Content="{DynamicResource Large}" Canvas.Left="92" Canvas.Top="208"></Label>
+
+
+        </Canvas>
+
+    </Grid>
+</Page>

@@ -1,0 +1,68 @@
+﻿<Page x:Class="Giros.Views.SidePage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Giros.Views"
+      mc:Ignorable="d"
+      Title="SidePage" Height="555.11" Width="831.205">
+
+    <Grid Background="White" Margin="0,0,30,10">
+
+        
+            <Canvas Background="Transparent" x:Name="tomatoCanvas" Height="150" Width="150" Margin="10,10,671,395" MouseLeftButtonDown="tomatoBackground">
+                <Image Source="/Resources/images/tomato.png" Height="100" Width="100" Canvas.Top="27" Canvas.Left="26"/>
+            </Canvas>
+
+            <Canvas Background="Transparent" x:Name="cabbageCanvas" Height="150" Width="150" Margin="170,10,511,395" MouseLeftButtonDown="cabbageBackground">
+                <Image Source="/Resources/images/cabbage.png" Height="100" Width="100" Canvas.Top="27" Canvas.Left="26"/>
+            </Canvas>
+
+            <Canvas Background="Transparent" x:Name="cucumberCanvas" Height="150" Width="150" Margin="334,10,347,395" MouseLeftButtonDown="cucumberBackground">
+                <Image Source="/Resources/images/cucumber.png" Height="100" Width="100" Canvas.Top="27" Canvas.Left="26"/>
+            </Canvas>
+
+            <Canvas Background="Transparent" x:Name="friesCanvas" Height="150" Width="150" Margin="489,10,192,395" MouseLeftButtonDown="friesBackground">
+                <Image Source="/Resources/images/fries.png" Height="100" Width="100" Canvas.Top="27" Canvas.Left="26"/>
+            </Canvas>
+
+
+            <Canvas Background="Transparent" Name="hotSauceCanvas" Height="150" Width="150" Margin="169,150,511,180" MouseLeftButtonDown="hotSauceBackground">
+                <Image Source="/Resources/images/hotSauce.png" Height="100" Width="100" Canvas.Top="27" Canvas.Left="26"/>
+            </Canvas>
+
+
+            <Canvas Background="Transparent" x:Name="ketchupCanvas" Height="150" Width="150" Margin="10,150,670,180" MouseLeftButtonDown="ketchupBackground">
+                <Image Source="/Resources/images/ketchup.png" Height="100" Width="100" Canvas.Top="27" Canvas.Left="26"/>
+            </Canvas>
+
+
+            <Canvas Background="Transparent" x:Name="lettuceCanvas" Height="150" Width="150" Margin="644,10,37,395" MouseLeftButtonDown="lettuceBackground">
+                <Image Source="/Resources/images/lettuce.png" Height="100" Width="100" Canvas.Top="27" Canvas.Left="26"/>
+            </Canvas>
+
+            <Canvas Background="Transparent" x:Name="mayoCanvas" Height="150" Width="150" Margin="324,150,337,180" MouseLeftButtonDown="mayoBackground">
+                <Image Source="/Resources/images/mayo.png" Height="100" Width="100" Canvas.Top="27" Canvas.Left="26"/>
+            </Canvas>
+
+
+            <Canvas Background="Transparent" x:Name="mustardCanvas" Height="150" Width="150" Margin="479,150,182,180" MouseLeftButtonDown="mustardBackground">
+                <Image Source="/Resources/images/mustard.png" Height="100" Width="100" Canvas.Top="27" Canvas.Left="26"/>
+            </Canvas>
+
+            <Canvas Background="Transparent" x:Name="onionCanvas" Height="150" Width="150" Margin="634,150,27,180" MouseLeftButtonDown="onionBackground">
+                <Image Source="/Resources/images/onion.png" Height="100" Width="100" Canvas.Top="27" Canvas.Left="26"/>
+            </Canvas>
+
+            <Canvas Background="Transparent" Name="pepperCanvas" Height="150" Width="150" Margin="10,358,671,47" MouseLeftButtonDown="pepperBackground">
+                <Image Source="/Resources/images/pepper.png" Height="100" Width="100" Canvas.Top="27" Canvas.Left="26"/>
+            </Canvas>
+
+            <Canvas Background="Transparent" Name="whiteSauceCanvas" Height="150" Width="150" Margin="170,358,511,47" MouseLeftButtonDown="whiteSauceBackground">
+                <Image Source="/Resources/images/whiteSauce.png" Height="100" Width="100" Canvas.Top="27" Canvas.Left="26"/>
+            </Canvas>
+
+       
+
+    </Grid>
+</Page>

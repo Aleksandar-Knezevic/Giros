@@ -19,9 +19,17 @@ namespace Giros.Views
     /// </summary>
     public partial class Dashboard : Window
     {
+
+        Uri drinkPage = new Uri("DrinkPage.xaml", UriKind.Relative);
+        Uri sidePage = new Uri("SidePage.xaml", UriKind.Relative);
+        Uri sizePage = new Uri("SizePage.xaml", UriKind.Relative);
+        Uri typePage = new Uri("TypePage.xaml", UriKind.Relative);
+
+
         public Dashboard()
         {
             InitializeComponent();
+            mainFrame.Source = typePage;
             for(int i=0;i<20;i++)
             {
                 Button b = new Button();
@@ -33,7 +41,15 @@ namespace Giros.Views
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            
+
+            if (mainFrame.Source.ToString().Split('/')[2].Equals(typePage.ToString()))
+                mainFrame.Source = sizePage;
+
+            else if (mainFrame.Source.ToString().Split('/')[2].Equals(sizePage.ToString()))
+                mainFrame.Source = sidePage;
+
+            else if (mainFrame.Source.ToString().Split('/')[2].Equals(sidePage.ToString()))
+                mainFrame.Source = drinkPage;
         }
     }
 }

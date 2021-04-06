@@ -51,5 +51,6 @@ namespace Giros.Views
             if (chickenCanvas.Background == Brushes.LightGreen)
                 chickenCanvas.Background = Brushes.Transparent;
         }
+
     }
 }

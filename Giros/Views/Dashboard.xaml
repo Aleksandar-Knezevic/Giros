@@ -24,13 +24,13 @@
             <StackPanel x:Name="myStackPanel" VerticalAlignment="Center" Orientation="Horizontal"></StackPanel>
         </ScrollViewer>
 
+        <ScrollViewer Grid.Row="1" Grid.Column="1">
+            <Frame NavigationUIVisibility="Hidden" x:Name="mainFrame"  Source="pack://application:,,,/Giros;component/Views/TypePage.xaml" />
+        </ScrollViewer>
+        
 
-        <Frame Grid.Row="1" Grid.Column="1" Source="pack://application:,,,/Giros;component/Views/TypePage.xaml" />
 
-
-        <Button Grid.Column="1" Grid.Row="2" Width="150" Content="{DynamicResource Next}" Click="Button_Click">
-            
-        </Button>
+        <Button Width="150" Content="{DynamicResource Next}" Click="Button_Click" Margin="304,10,353,22" Grid.Column="1" Grid.Row="2"/>
 
     </Grid>
 </Window>
