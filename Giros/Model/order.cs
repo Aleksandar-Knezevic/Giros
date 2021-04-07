@@ -28,7 +28,10 @@ namespace Giros.Model
 
         public int staffId { get; set; }
 
-        public DateTime due { get; set; }
+        [StringLength(45)]
+        public string location { get; set; }
+
+        public sbyte? isActive { get; set; }
 
         public virtual staff staff { get; set; }
 

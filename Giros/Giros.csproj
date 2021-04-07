@@ -129,8 +129,20 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Model\drink.cs" />
+    <Compile Include="Model\GyroDB.cs" />
+    <Compile Include="Model\order.cs" />
+    <Compile Include="Model\OrderModel.cs" />
+    <Compile Include="Model\side.cs" />
+    <Compile Include="Model\staff.cs" />
     <Compile Include="Views\DrinkPage.xaml.cs">
       <DependentUpon>DrinkPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\LocationPage.xaml.cs">
+      <DependentUpon>LocationPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\OrderCard.xaml.cs">
+      <DependentUpon>OrderCard.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\SidePage.xaml.cs">
       <DependentUpon>SidePage.xaml</DependentUpon>
@@ -142,6 +154,14 @@
       <DependentUpon>TypePage.xaml</DependentUpon>
     </Compile>
     <Page Include="Views\DrinkPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\LocationPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\OrderCard.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -181,11 +201,6 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Model\drink.cs" />
-    <Compile Include="Model\GyroDb.cs" />
-    <Compile Include="Model\order.cs" />
-    <Compile Include="Model\side.cs" />
-    <Compile Include="Model\staff.cs" />
     <Compile Include="Views\Dashboard.xaml.cs">
       <DependentUpon>Dashboard.xaml</DependentUpon>
     </Compile>
@@ -272,6 +287,13 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\images\orangeJuice.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\images\dineIn.png" />
+    <Resource Include="Resources\images\takeaway.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\images\user.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

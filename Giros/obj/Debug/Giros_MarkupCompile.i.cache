@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\aleks\OneDrive\Radna površina\C#\Giros\Giros\App.xaml
-71240373164
+9740465404
 
-161734064973
+19-1522245869
 332042860492
-Views\DrinkPage.xaml;Views\SidePage.xaml;Views\SizePage.xaml;Views\TypePage.xaml;Resources\Style.xaml;Views\Dashboard.xaml;Views\Login.xaml;
+Views\DrinkPage.xaml;Views\LocationPage.xaml;Views\OrderCard.xaml;Views\SidePage.xaml;Views\SizePage.xaml;Views\TypePage.xaml;Resources\Style.xaml;Views\Dashboard.xaml;Views\Login.xaml;
 
-True
+False
 

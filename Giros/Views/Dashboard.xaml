@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Giros.Views"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
         Title="Dashboard" Height="542.288" Width="976.529">
     <Grid>
@@ -27,12 +28,58 @@
         <ScrollViewer Grid.Row="1" Grid.Column="1">
             <Frame NavigationUIVisibility="Hidden" x:Name="mainFrame"  Source="pack://application:,,,/Giros;component/Views/TypePage.xaml" />
         </ScrollViewer>
-        
 
 
-        <Button Width="150" Content="{DynamicResource Next}" Click="Button_Click" Margin="392,10,265,22" Grid.Column="1" Grid.Row="2"/>
+
+        <Button Width="150" Content="{DynamicResource Next}" Click="Button_Click" Margin="392,10,265,22" Grid.Column="1" Grid.Row="2" Name="nextButton"/>
 
         <Button Width="150" Content="{DynamicResource Previous}" Margin="201,10,456,22" Grid.Column="1" Grid.Row="2" Click="Button_Click_1"/>
+
+        <Image Source="/Resources/images/user.png" Margin="47,32,38,30"></Image>
+
+        <materialDesign:PackIcon Kind="Planet" Margin="31,10,0,0" />
+
+        <materialDesign:PackIcon Kind="Brush" Margin="79,10,0,0"/>
+
+        <materialDesign:PackIcon Kind="Logout"  Margin="116,10,0,0"/>
+
+        <Label Content=" Aleksandar" Margin="47,92,38,10"/>
+
+        <Canvas Grid.Row="1" Background="Gray">
+            <Label FontWeight="Bold" Foreground="White" Canvas.Left="16" Canvas.Top="18" Height="29" Width="131" FontSize="15">Order Summary</Label>
+            <Rectangle Fill="Green" Height="3" Width="137" Canvas.Left="10" Canvas.Top="47" RadiusX="10" RadiusY="10"></Rectangle>
+
+            <Label Foreground="White" Canvas.Left="22" Canvas.Top="62" Height="25" Width="36">Type</Label>
+            <Label Foreground="White" Canvas.Left="94" Canvas.Top="62" Height="26" Width="32">Pork</Label>
+
+
+            <Label Foreground="White" Canvas.Left="22" Canvas.Top="82" Height="25" Width="36">Size</Label>
+            <Label Foreground="White" Canvas.Left="94" Canvas.Top="81" Height="26" Width="39">Small</Label>
+
+
+            <Label Foreground="White" Canvas.Left="22" Canvas.Top="102" Height="25" Width="36">Sides</Label>
+            <Label Foreground="White" Canvas.Left="94" Canvas.Top="101" Height="26" Width="53">Tomato</Label>
+            <Label Foreground="White" Canvas.Left="94" Canvas.Top="121" Height="26" Width="53">Lettuce</Label>
+            <Label Foreground="White" Canvas.Left="94" Canvas.Top="140" Height="26" Width="53">Ketchup</Label>
+
+
+            <Label Foreground="White" Canvas.Left="22" Canvas.Top="162" Height="25" Width="36">Drinks</Label>
+            <Label Foreground="White" Canvas.Left="94" Canvas.Top="161" Height="26" Width="53">Coke</Label>
+
+            <Rectangle Fill="Green" Height="3" Width="137" Canvas.Left="10" Canvas.Top="187" RadiusX="10" RadiusY="10"></Rectangle>
+            <Label Foreground="White" Canvas.Left="22" Canvas.Top="197" Height="25" Width="36">Total</Label>
+            <Label Foreground="White" Canvas.Left="94" Canvas.Top="197" Height="26" Width="53">6KM</Label>
+
+            <Button Content="Finish" Background="Green" Canvas.Left="35" Canvas.Top="243" BorderBrush="Green" Height="33" Width="81"></Button>
+
+
+
+        </Canvas>
+
+
+        <Canvas Grid.Row="2" Background="Gray"></Canvas>
+
+
 
 
     </Grid>

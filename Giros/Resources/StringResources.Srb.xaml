@@ -12,5 +12,30 @@
     <system:String x:Key="Medium">Srednji</system:String>
     <system:String x:Key="Large">Veliki</system:String>
     <system:String x:Key="Previous">Nazad</system:String>
+    <system:String x:Key="Finish">Kraj</system:String>
+    <system:String x:Key="Tomato">Paradajz</system:String>
+    <system:String x:Key="Cucumber">Krastavac</system:String>
+    <system:String x:Key="hotSauce">Ljuti sos</system:String>
+    <system:String x:Key="whiteSauce">Caciki</system:String>
+    <system:String x:Key="Cabbage">Kupus</system:String>
+    <system:String x:Key="Fries">Pomfrit</system:String>
+    <system:String x:Key="Onion">Luk</system:String>
+    <system:String x:Key="Lettuce">Zelena salata</system:String>
+    <system:String x:Key="Pepper">Paprika</system:String>
+    <system:String x:Key="Ketchup">Kečap</system:String>
+    <system:String x:Key="Mayonnaise">Majoneza</system:String>
+    <system:String x:Key="Mustard">Senf</system:String>
+    <system:String x:Key="Coke">Koka Kola</system:String>
+    <system:String x:Key="Pepsi">Pepsi</system:String>
+    <system:String x:Key="mineralWater">Kisela voda</system:String>
+    <system:String x:Key="regularWater">Obična voda</system:String>
+    <system:String x:Key="Fanta">Fanta</system:String>
+    <system:String x:Key="orangeJuice">Sok od narandže</system:String>
+    <system:String x:Key="Apple Juice">Sok od jabuke</system:String>
+    <system:String x:Key="exoticLimeta">Exotic limeta</system:String>
+    <system:String x:Key="exoticKruska">Exotic kruška</system:String>
+    <system:String x:Key="Beer">Pivo</system:String>
+    <system:String x:Key="dineIn">Na tanjir</system:String>
+    <system:String x:Key="Takeaway">Za ponijeti</system:String>
     
 </ResourceDictionary>

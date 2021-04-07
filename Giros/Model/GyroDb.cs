@@ -5,10 +5,10 @@ using System.Linq;
 
 namespace Giros.Model
 {
-    public partial class GyroDb : DbContext
+    public partial class GyroDB : DbContext
     {
-        public GyroDb()
-            : base("name=GyroDb")
+        public GyroDB()
+            : base("name=GyroDB")
         {
         }
 
@@ -34,6 +34,10 @@ namespace Giros.Model
 
             modelBuilder.Entity<order>()
                 .Property(e => e.type)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<order>()
+                .Property(e => e.location)
                 .IsUnicode(false);
 
             modelBuilder.Entity<order>()

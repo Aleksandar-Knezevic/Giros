@@ -9,60 +9,72 @@
 
     <Grid Background="White" Margin="0,0,30,10">
 
-        
-            <Canvas Background="Transparent" x:Name="tomatoCanvas" Height="150" Width="150" Margin="10,10,671,395" MouseLeftButtonDown="tomatoBackground" Uid="1">
-                <Image Source="/Resources/images/tomato.png" Height="100" Width="100" Canvas.Top="27" Canvas.Left="26"/>
-            </Canvas>
 
-            <Canvas Background="Transparent" x:Name="cabbageCanvas" Height="150" Width="150" Margin="170,10,511,395" MouseLeftButtonDown="cabbageBackground" Uid="5">
-                <Image Source="/Resources/images/cabbage.png" Height="100" Width="100" Canvas.Top="27" Canvas.Left="26"/>
-            </Canvas>
+        <Canvas Background="Transparent" x:Name="tomatoCanvas" Height="150" Width="150" Margin="10,10,671,395" MouseLeftButtonDown="tomatoBackground" Uid="1">
+            <Image Source="/Resources/images/tomato.png" Height="100" Width="100" Canvas.Top="27" Canvas.Left="26"/>
+            <Label Content="{DynamicResource Tomato}" Canvas.Left="54" Canvas.Top="127"></Label>
+        </Canvas>
 
-            <Canvas Background="Transparent" x:Name="cucumberCanvas" Height="150" Width="150" Margin="334,10,347,395" MouseLeftButtonDown="cucumberBackground" Uid="2">
-                <Image Source="/Resources/images/cucumber.png" Height="100" Width="100" Canvas.Top="27" Canvas.Left="26"/>
-            </Canvas>
+        <Canvas Background="Transparent" x:Name="cabbageCanvas" Height="150" Width="150" Margin="170,10,511,395" MouseLeftButtonDown="cabbageBackground" Uid="5">
+            <Image Source="/Resources/images/cabbage.png" Height="100" Width="100" Canvas.Top="27" Canvas.Left="26"/>
+            <Label Content="{DynamicResource Cabbage}" Canvas.Left="57" Canvas.Top="127"></Label>
+        </Canvas>
 
-            <Canvas Background="Transparent" x:Name="friesCanvas" Height="150" Width="150" Margin="489,10,192,395" MouseLeftButtonDown="friesBackground" Uid="6">
-                <Image Source="/Resources/images/fries.png" Height="100" Width="100" Canvas.Top="27" Canvas.Left="26"/>
-            </Canvas>
+        <Canvas Background="Transparent" x:Name="cucumberCanvas" Height="150" Width="150" Margin="325,10,326,385" MouseLeftButtonDown="cucumberBackground" Uid="2">
+            <Image Source="/Resources/images/cucumber.png" Height="100" Width="100" Canvas.Top="27" Canvas.Left="26"/>
+            <Label Content="{DynamicResource Cucumber}" Canvas.Left="49" Canvas.Top="126"></Label>
+        </Canvas>
 
-
-            <Canvas Background="Transparent" Name="hotSauceCanvas" Height="150" Width="150" Margin="169,150,511,180" MouseLeftButtonDown="hotSauceBackground" Uid="3">
-                <Image Source="/Resources/images/hotSauce.png" Height="100" Width="100" Canvas.Top="27" Canvas.Left="26"/>
-            </Canvas>
-
-
-            <Canvas Background="Transparent" x:Name="ketchupCanvas" Height="150" Width="150" Margin="10,150,670,180" MouseLeftButtonDown="ketchupBackground" Uid="11">
-                <Image Source="/Resources/images/ketchup.png" Height="100" Width="100" Canvas.Top="27" Canvas.Left="26"/>
-            </Canvas>
+        <Canvas Background="Transparent" x:Name="friesCanvas" Height="150" Width="150" Margin="480,10,171,385" MouseLeftButtonDown="friesBackground" Uid="6">
+            <Image Source="/Resources/images/fries.png" Height="100" Width="100" Canvas.Top="27" Canvas.Left="26"/>
+            <Label Content="{DynamicResource Fries}" Canvas.Left="56" Canvas.Top="126"></Label>
+        </Canvas>
 
 
-            <Canvas Background="Transparent" x:Name="lettuceCanvas" Height="150" Width="150" Margin="644,10,37,395" MouseLeftButtonDown="lettuceBackground" Uid="8">
-                <Image Source="/Resources/images/lettuce.png" Height="100" Width="100" Canvas.Top="27" Canvas.Left="26"/>
-            </Canvas>
-
-            <Canvas Background="Transparent" x:Name="mayoCanvas" Height="150" Width="150" Margin="324,150,337,180" MouseLeftButtonDown="mayoBackground" Uid="12">
-                <Image Source="/Resources/images/mayo.png" Height="100" Width="100" Canvas.Top="27" Canvas.Left="26"/>
-            </Canvas>
+        <Canvas Background="Transparent" Name="hotSauceCanvas" Height="150" Width="150" Margin="169,150,511,180" MouseLeftButtonDown="hotSauceBackground" Uid="3">
+            <Image Source="/Resources/images/hotSauce.png" Height="100" Width="100" Canvas.Top="27" Canvas.Left="26"/>
+            <Label Content="{DynamicResource hotSauce}" Canvas.Left="51" Canvas.Top="126"></Label>
+        </Canvas>
 
 
-            <Canvas Background="Transparent" x:Name="mustardCanvas" Height="150" Width="150" Margin="479,150,182,180" MouseLeftButtonDown="mustardBackground" Uid="17">
-                <Image Source="/Resources/images/mustard.png" Height="100" Width="100" Canvas.Top="27" Canvas.Left="26"/>
-            </Canvas>
+        <Canvas Background="Transparent" x:Name="ketchupCanvas" Height="150" Width="150" Margin="10,150,670,180" MouseLeftButtonDown="ketchupBackground" Uid="11">
+            <Image Source="/Resources/images/ketchup.png" Height="100" Width="100" Canvas.Top="27" Canvas.Left="26"/>
+            <Label Content="{DynamicResource Ketchup}" Canvas.Left="56" Canvas.Top="126"></Label>
+        </Canvas>
 
-            <Canvas Background="Transparent" x:Name="onionCanvas" Height="150" Width="150" Margin="634,150,27,180" MouseLeftButtonDown="onionBackground" Uid="7">
-                <Image Source="/Resources/images/onion.png" Height="100" Width="100" Canvas.Top="27" Canvas.Left="26"/>
-            </Canvas>
 
-            <Canvas Background="Transparent" Name="pepperCanvas" Height="150" Width="150" Margin="10,358,671,47" MouseLeftButtonDown="pepperBackground" Uid="9">
-                <Image Source="/Resources/images/pepper.png" Height="100" Width="100" Canvas.Top="27" Canvas.Left="26"/>
-            </Canvas>
+        <Canvas Background="Transparent" x:Name="lettuceCanvas" Height="150" Width="150" Margin="635,10,16,385" MouseLeftButtonDown="lettuceBackground" Uid="8">
+            <Image Source="/Resources/images/lettuce.png" Height="100" Width="100" Canvas.Top="27" Canvas.Left="26"/>
+            <Label Content="{DynamicResource Lettuce}" Canvas.Left="40" Canvas.Top="126"></Label>
+        </Canvas>
 
-            <Canvas Background="Transparent" Name="whiteSauceCanvas" Height="150" Width="150" Margin="170,358,511,47" MouseLeftButtonDown="whiteSauceBackground" Uid="4">
-                <Image Source="/Resources/images/whiteSauce.png" Height="100" Width="100" Canvas.Top="27" Canvas.Left="26"/>
-            </Canvas>
+        <Canvas Background="Transparent" x:Name="mayoCanvas" Height="150" Width="150" Margin="324,150,337,180" MouseLeftButtonDown="mayoBackground" Uid="12">
+            <Image Source="/Resources/images/mayo.png" Height="100" Width="100" Canvas.Top="27" Canvas.Left="26"/>
+            <Label Content="{DynamicResource Mayonnaise}" Canvas.Left="46" Canvas.Top="126"></Label>
+        </Canvas>
 
-       
+
+        <Canvas Background="Transparent" x:Name="mustardCanvas" Height="150" Width="150" Margin="479,150,182,180" MouseLeftButtonDown="mustardBackground" Uid="17">
+            <Image Source="/Resources/images/mustard.png" Height="100" Width="100" Canvas.Top="27" Canvas.Left="26"/>
+            <Label Content="{DynamicResource Mustard}" Canvas.Left="61" Canvas.Top="126"></Label>
+        </Canvas>
+
+        <Canvas Background="Transparent" x:Name="onionCanvas" Height="150" Width="150" Margin="634,150,27,180" MouseLeftButtonDown="onionBackground" Uid="7">
+            <Image Source="/Resources/images/onion.png" Height="100" Width="100" Canvas.Top="27" Canvas.Left="26"/>
+            <Label Content="{DynamicResource Onion}" Canvas.Left="65" Canvas.Top="126"></Label>
+        </Canvas>
+
+        <Canvas Background="Transparent" Name="pepperCanvas" Height="150" Width="150" Margin="10,358,671,47" MouseLeftButtonDown="pepperBackground" Uid="9">
+            <Image Source="/Resources/images/pepper.png" Height="100" Width="100" Canvas.Top="27" Canvas.Left="26"/>
+            <Label Content="{DynamicResource Pepper}" Canvas.Left="56" Canvas.Top="126"></Label>
+        </Canvas>
+
+        <Canvas Background="Transparent" Name="whiteSauceCanvas" Height="150" Width="150" Margin="170,358,511,47" MouseLeftButtonDown="whiteSauceBackground" Uid="4">
+            <Image Source="/Resources/images/whiteSauce.png" Height="100" Width="100" Canvas.Top="27" Canvas.Left="26"/>
+            <Label Content="{DynamicResource whiteSauce}" Canvas.Left="56" Canvas.Top="126"></Label>
+        </Canvas>
+
+
 
     </Grid>
 </Page>

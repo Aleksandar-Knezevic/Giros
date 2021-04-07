@@ -1,0 +1,24 @@
+﻿<Page x:Class="Giros.Views.LocationPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Giros.Views"
+      mc:Ignorable="d"
+      Title="LocationPage" Height="364" Width="714">
+
+    <Grid Background="White">
+        <Canvas Background="Transparent" x:Name="dineInCanvas" Margin="80,16,414,71" MouseLeftButtonDown="selectDineInCanvas">
+            <Image Source="/Resources/images/dineIn.png" Canvas.Top="10" Height="224" Width="161" Canvas.Left="29"/>
+            <Label Content="{DynamicResource dineIn}" Canvas.Left="83" Canvas.Top="210"></Label>
+        </Canvas>
+
+        <Canvas Background="Transparent" x:Name="takeawayCanvas" Margin="414,10,82,71" MouseLeftButtonDown="selectTakeawayCanvas">
+            <Image Source="/Resources/images/takeaway.png" Canvas.Left="19" Height="207" Width="169" Canvas.Top="19"/>
+            <Label Content="{DynamicResource Takeaway}" Canvas.Left="75" Canvas.Top="216"></Label>
+        </Canvas>
+
+
+
+    </Grid>
+</Page>

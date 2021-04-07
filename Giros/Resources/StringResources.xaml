@@ -12,5 +12,30 @@
     <system:String x:Key="Medium">Medium</system:String>
     <system:String x:Key="Large">Large</system:String>
     <system:String x:Key="Previous">Previous</system:String>
+    <system:String x:Key="Finish">Finish</system:String>
+    <system:String x:Key="Tomato">Tomato</system:String>
+    <system:String x:Key="Cucumber">Cucumber</system:String>
+    <system:String x:Key="hotSauce">Hot Sauce</system:String>
+    <system:String x:Key="whiteSauce">Tzatziki</system:String>
+    <system:String x:Key="Cabbage">Cabbage</system:String>
+    <system:String x:Key="Fries">Fries</system:String>
+    <system:String x:Key="Onion">Onion</system:String>
+    <system:String x:Key="Lettuce">Lettuce</system:String>
+    <system:String x:Key="Pepper">Pepper</system:String>
+    <system:String x:Key="Ketchup">Ketchup</system:String>
+    <system:String x:Key="Mayonnaise">Mayonnaise</system:String>
+    <system:String x:Key="Mustard">Mustard</system:String>
+    <system:String x:Key="Coke">Coke</system:String>
+    <system:String x:Key="Pepsi">Pepsi</system:String>
+    <system:String x:Key="mineralWater">Mineral Water</system:String>
+    <system:String x:Key="regularWater">Regular Water</system:String>
+    <system:String x:Key="Fanta">Fanta</system:String>
+    <system:String x:Key="orangeJuice">Orange Juice</system:String>
+    <system:String x:Key="Apple Juice">Apple Juice</system:String>
+    <system:String x:Key="exoticLimeta">Exotic Lime</system:String>
+    <system:String x:Key="exoticKruska">Exotic Pear</system:String>
+    <system:String x:Key="Beer">Beer</system:String>
+    <system:String x:Key="dineIn">Dine-In</system:String>
+    <system:String x:Key="Takeaway">Takeaway</system:String>
     
 </ResourceDictionary>
