@@ -9,17 +9,17 @@
       Title="TypePage">
 
     <Grid Background="White">
-        <Canvas x:Name="chickenCanvas" Grid.Column="1" Grid.Row="1" Margin="31,15,540,35" Width="200" MouseLeftButtonDown="selectChickenCanvas">
+        <Canvas x:Name="ChickenCanvas" Grid.Column="1" Grid.Row="1" Margin="31,15,540,35" Width="200" MouseLeftButtonDown="selectChickenCanvas">
             <Image Source="/Resources/images/hen.png" Canvas.Left="24" Canvas.Top="10" Height="232" Width="166"/>
             <Label Content="{DynamicResource Chicken}" Canvas.Left="76" Canvas.Top="209"></Label>
         </Canvas>
 
-        <Canvas x:Name="porkCanvas" Grid.Column="1" Grid.Row="1" Margin="287,15,284,35" Width="200" MouseLeftButtonDown="selectPorkCanvas">
+        <Canvas x:Name="PorkCanvas" Grid.Column="1" Grid.Row="1" Margin="287,15,284,35" Width="200" MouseLeftButtonDown="selectPorkCanvas">
             <Image Source="/Resources/images/pork.png" Canvas.Left="10" Height="222" Width="180" Canvas.Top="24"/>
             <Label Content="{DynamicResource Pork}" Canvas.Left="82" Canvas.Top="209"></Label>
         </Canvas>
 
-        <Canvas x:Name="mixCanvas" Grid.Column="1" Grid.Row="1" Margin="541,15,30,35" Width="200" MouseLeftButtonDown="selectMixCanvas">
+        <Canvas x:Name="MixedCanvas" Grid.Column="1" Grid.Row="1" Margin="541,15,30,35" Width="200" MouseLeftButtonDown="selectMixCanvas">
             <Image Source="/Resources/images/hen.png" Canvas.Left="10" Canvas.Top="64" Height="100" Width="75"/>
             <Image Source="/Resources/images/pork.png" Canvas.Left="90" Height="94" Width="90" Canvas.Top="70"/>
             <Label Content="{DynamicResource Mixed}" Canvas.Left="78" Canvas.Top="209"></Label>

@@ -15,8 +15,8 @@
     <system:String x:Key="Finish">Finish</system:String>
     <system:String x:Key="Tomato">Tomato</system:String>
     <system:String x:Key="Cucumber">Cucumber</system:String>
-    <system:String x:Key="hotSauce">Hot Sauce</system:String>
-    <system:String x:Key="whiteSauce">Tzatziki</system:String>
+    <system:String x:Key="Hot Sauce">Hot Sauce</system:String>
+    <system:String x:Key="White Sauce">Tzatziki</system:String>
     <system:String x:Key="Cabbage">Cabbage</system:String>
     <system:String x:Key="Fries">Fries</system:String>
     <system:String x:Key="Onion">Onion</system:String>
@@ -27,15 +27,21 @@
     <system:String x:Key="Mustard">Mustard</system:String>
     <system:String x:Key="Coke">Coke</system:String>
     <system:String x:Key="Pepsi">Pepsi</system:String>
-    <system:String x:Key="mineralWater">Mineral Water</system:String>
-    <system:String x:Key="regularWater">Regular Water</system:String>
+    <system:String x:Key="Mineral Water">Mineral Water</system:String>
+    <system:String x:Key="Regular Water">Regular Water</system:String>
     <system:String x:Key="Fanta">Fanta</system:String>
-    <system:String x:Key="orangeJuice">Orange Juice</system:String>
+    <system:String x:Key="Orange Juice">Orange Juice</system:String>
     <system:String x:Key="Apple Juice">Apple Juice</system:String>
-    <system:String x:Key="exoticLimeta">Exotic Lime</system:String>
-    <system:String x:Key="exoticKruska">Exotic Pear</system:String>
+    <system:String x:Key="Exotic Limeta">Exotic Lime</system:String>
+    <system:String x:Key="Exotic Kruska">Exotic Pear</system:String>
     <system:String x:Key="Beer">Beer</system:String>
-    <system:String x:Key="dineIn">Dine-In</system:String>
+    <system:String x:Key="DineIn">Dine-In</system:String>
     <system:String x:Key="Takeaway">Takeaway</system:String>
+    <system:String x:Key="Type">Type</system:String>
+    <system:String x:Key="Size">Size</system:String>
+    <system:String x:Key="Sides">Sides</system:String>
+    <system:String x:Key="Drinks">Drinks</system:String>
+    <system:String x:Key="Location">Location</system:String>
+    <system:String x:Key="Summary">Order Summary</system:String>
     
 </ResourceDictionary>

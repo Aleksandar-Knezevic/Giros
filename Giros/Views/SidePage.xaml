@@ -33,7 +33,7 @@
 
         <Canvas Background="Transparent" Name="hotSauceCanvas" Height="150" Width="150" Margin="169,150,511,180" MouseLeftButtonDown="hotSauceBackground" Uid="3">
             <Image Source="/Resources/images/hotSauce.png" Height="100" Width="100" Canvas.Top="27" Canvas.Left="26"/>
-            <Label Content="{DynamicResource hotSauce}" Canvas.Left="51" Canvas.Top="126"></Label>
+            <Label Content="{DynamicResource Hot Sauce}" Canvas.Left="51" Canvas.Top="126"></Label>
         </Canvas>
 
 
@@ -71,7 +71,7 @@
 
         <Canvas Background="Transparent" Name="whiteSauceCanvas" Height="150" Width="150" Margin="170,358,511,47" MouseLeftButtonDown="whiteSauceBackground" Uid="4">
             <Image Source="/Resources/images/whiteSauce.png" Height="100" Width="100" Canvas.Top="27" Canvas.Left="26"/>
-            <Label Content="{DynamicResource whiteSauce}" Canvas.Left="56" Canvas.Top="126"></Label>
+            <Label Content="{DynamicResource White Sauce}" Canvas.Left="56" Canvas.Top="126"></Label>
         </Canvas>
 
 

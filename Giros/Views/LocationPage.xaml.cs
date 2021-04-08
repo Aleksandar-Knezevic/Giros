@@ -27,17 +27,17 @@ namespace Giros.Views
 
         private void selectDineInCanvas(object sender, MouseButtonEventArgs e)
         {
-            dineInCanvas.Background = Brushes.LightGreen;
-            if (takeawayCanvas.Background == Brushes.LightGreen)
-                takeawayCanvas.Background = Brushes.Transparent;
+            DineInCanvas.Background = Brushes.LightGreen;
+            if (TakeawayCanvas.Background == Brushes.LightGreen)
+                TakeawayCanvas.Background = Brushes.Transparent;
             
         }
 
         private void selectTakeawayCanvas(object sender, MouseButtonEventArgs e)
         {
-            takeawayCanvas.Background = Brushes.LightGreen;
-            if (dineInCanvas.Background == Brushes.LightGreen)
-                dineInCanvas.Background = Brushes.Transparent;
+            TakeawayCanvas.Background = Brushes.LightGreen;
+            if (DineInCanvas.Background == Brushes.LightGreen)
+                DineInCanvas.Background = Brushes.Transparent;
         }
     }
 }

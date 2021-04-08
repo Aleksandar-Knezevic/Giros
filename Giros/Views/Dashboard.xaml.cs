@@ -34,6 +34,7 @@ namespace Giros.Views
         List<int> drinkIds = new List<int>();
         String location;
         GyroDB context;
+        int currId;
 
         //DrinkPage drinkPage = new DrinkPage();
         //SidePage sidePage = new SidePage();
@@ -44,57 +45,33 @@ namespace Giros.Views
         public Dashboard()
         {
             InitializeComponent();
+
+          
+
+
             if (context == null)
                 context = new GyroDB();
-            for(int i=0;i<9;i++)
-            {
-                Grid g = new Grid();
-                g.MouseLeftButtonDown += (sender, e) => displayInfo(i);
-                g.Width = 84;
-                g.Height = 102;
-                g.Background = Brushes.YellowGreen;
-                g.Margin = new Thickness(10, 0, 0, 0);
+            initializeStackPanel();
 
-
-                Image im = new Image();
-                im.Source = new BitmapImage(new Uri("/Resources/images/gyro.png", UriKind.Relative));
-               // im.Width = 40;
-               // im.Height = 60;
-                im.Margin = new Thickness(4, 30, 30, 29);
-                
-
-
-                //Button b = new Button();
-                //b.Margin = new Thickness(28,77,29,4);
-                //b.Height = 15;
-                //b.Width = 28;
-                //b.Background = Brushes.Green;
-                //b.BorderBrush = Brushes.Green;
-
-                //<Label Name="orderId" Margin="34,30,17,38" FontSize="15"></Label>
-
-                Label l = new Label();
-                l.Margin = new Thickness(42, 36, 17, 38);
-                l.FontSize = 18;
-                l.Content = ":"+i;
-
-
-                g.Children.Add(im);
-               // g.Children.Add(b);
-                g.Children.Add(l);
-
-
-
-                myStackPanel.Children.Add(g);
-                
-            }
+            
             mainFrame.Source = typePage;
 
            
            
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        public void initializeStackPanel()
+        {
+            var orders = context.orders.ToList().Where(e => e.isActive==1);
+            foreach (var o in orders)
+            {
+                Grid g =  createGrid(o.id);
+                g.Uid = o.id.ToString();
+                myStackPanel.Children.Add(g);
+             }
+        }
+
+        private async void Button_Click(object sender, RoutedEventArgs e)
         {
 
             if (mainFrame.Source.ToString().Split('/')[2].Equals(typePage.ToString()))
@@ -204,10 +181,14 @@ namespace Giros.Views
                     sideIds = new List<int>(sideIds),
                     size = size,
                     type = type,
-                    staffId = 2
+                    staffId = 2,
+                    
                 };
+              
 
-                new Thread(() => addOrder(om)).Start();
+                //Thread t = new Thread(() => addOrder(om));
+                //t.SetApartmentState(ApartmentState.STA);
+                //t.Start();
 
                 nextButton.Content = Application.Current.FindResource("Next") as string;
                 mainFrame.Source = typePage;
@@ -216,7 +197,15 @@ namespace Giros.Views
                 location = null;
                 drinkIds.Clear();
                 sideIds.Clear();
-                myStackPanel.Children.Add(new Button());
+
+
+
+                var scheduler = TaskScheduler.FromCurrentSynchronizationContext();
+                Task<Grid> t = addOrder(om);
+                t.Start(scheduler);
+                Grid g = await t;
+                myStackPanel.Children.Add(g);
+
             }
                 
         }
@@ -289,19 +278,30 @@ namespace Giros.Views
 
         }
 
-        private void addOrder(OrderModel om)
+        private Task<Grid> addOrder(OrderModel om)
         {
-            order o = context.orders.Create();
-            o.size = om.size;
-            o.type = om.type;
-            o.staffId = om.staffId;
-            o.location = om.location;
-            foreach (var id in om.drinkIds)
-                o.drinks.Add(context.drinks.Find(id));
-            foreach (var id in om.sideIds)
-                o.sides.Add(context.sides.Find(id));
-            var or = context.orders.Add(o);
-            context.SaveChanges();
+            return new Task<Grid>(() =>
+            {
+                order o = context.orders.Create();
+                o.size = om.size;
+                o.type = om.type;
+                o.staffId = om.staffId;
+                o.location = om.location;
+                o.isActive = 1;
+                foreach (var id in om.drinkIds)
+                    o.drinks.Add(context.drinks.Find(id));
+                foreach (var id in om.sideIds)
+                    o.sides.Add(context.sides.Find(id));
+                var or = context.orders.Add(o);
+                context.SaveChanges();
+                Grid g = createGrid(or.id);
+                return g;
+           });
+
+            
+
+
+
         }
 
         private void backToType(object sender, NavigationEventArgs e)
@@ -476,12 +476,90 @@ namespace Giros.Views
         }
 
 
-        private void displayInfo(int i)
+        private async void displayInfo(int i)
         {
-            new Thread(() =>
+            var o = await context.orders.FindAsync(i);
+            currId = o.id;
+            decimal cijena;
+            if (o.size.Equals("Small"))
+                cijena = 4M;
+            if (o.size.Equals("Medium"))
+                cijena = 6M;
+            else
+                cijena = 8M;
+            String type = (Application.Current.FindResource("Type") as string) + "\t" + (Application.Current.FindResource(o.type) as string) + "\n";
+            String size = (Application.Current.FindResource("Size") as string) + "\t" + (Application.Current.FindResource(o.size) as string) + "\n";
+            String sides = Application.Current.FindResource("Sides") as string;
+            foreach (var side in o.sides)
+                sides += "\t" + (Application.Current.FindResource(side.name) as string) + "\n";
+            
+            String drinks = Application.Current.FindResource("Drinks") as string;
+            foreach (var drink in o.drinks)
             {
+                drinks += "\t" + (Application.Current.FindResource(drink.name) as string) + "\n";
+                cijena += drink.price;
 
-            }).Start();
+            }
+                
+            String location = (Application.Current.FindResource("Location") as string) + "\t" + (Application.Current.FindResource(o.location) as string) +  "\n";
+            string racunString = type + size + sides + drinks + location;
+            Application.Current.Dispatcher.Invoke(() =>
+            {
+                racunLabel.Content = racunString;
+                cijenaLabel.Content = "Total" + "\t" + cijena.ToString()+"KM";
+            });
+                
+        }
+
+
+
+
+        private Grid createGrid(int i)
+        {
+                Grid g = new Grid();
+                g.MouseLeftButtonDown += (sender, e) => displayInfo(i);
+                g.Width = 84;
+                g.Height = 102;
+                g.Background = Brushes.YellowGreen;
+                g.Margin = new Thickness(10, 0, 0, 0);
+
+
+
+
+
+                Label l = new Label();
+                l.Margin = new Thickness(42, 36, 8, 38);
+                l.FontSize = 15;
+                l.Content = ":" + i;
+
+                Image im = new Image();
+                im.Source = new BitmapImage(new Uri("/Resources/images/gyro.png", UriKind.Relative));
+                im.Margin = new Thickness(4, 30, 30, 29);
+
+
+                g.Children.Add(im);
+                // g.Children.Add(b);
+                g.Children.Add(l);
+                return g;  
+
+
+            
+        }
+
+        private async void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            var o = await context.orders.FindAsync(currId);
+            o.isActive = 0;
+            await context.SaveChangesAsync();
+
+            await Application.Current.Dispatcher.InvokeAsync(() =>
+            {
+                myStackPanel.Children.Clear();
+                racunLabel.Content = "";
+                cijenaLabel.Content = "";
+                initializeStackPanel();
+            });
+
         }
     }
 }

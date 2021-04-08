@@ -45,39 +45,37 @@
 
         <Label Content=" Aleksandar" Margin="47,92,38,10"/>
 
-        <Canvas Grid.Row="1" Background="Gray">
-            <Label FontWeight="Bold" Foreground="White" Canvas.Left="16" Canvas.Top="18" Height="29" Width="131" FontSize="15">Order Summary</Label>
-            <Rectangle Fill="Green" Height="3" Width="137" Canvas.Left="10" Canvas.Top="47" RadiusX="10" RadiusY="10"></Rectangle>
-
-            <Label Foreground="White" Canvas.Left="22" Canvas.Top="62" Height="25" Width="36">Type</Label>
-            <Label Foreground="White" Canvas.Left="94" Canvas.Top="62" Height="26" Width="32">Pork</Label>
+        <ScrollViewer Grid.Row="1"  Background="Gray" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
+            <StackPanel x:Name="racunStackPanel" >
 
 
-            <Label Foreground="White" Canvas.Left="22" Canvas.Top="82" Height="25" Width="36">Size</Label>
-            <Label Foreground="White" Canvas.Left="94" Canvas.Top="81" Height="26" Width="39">Small</Label>
+                <Label  FontWeight="Bold" Foreground="White" Canvas.Left="16" Canvas.Top="18" Height="Auto" Width="131" FontSize="15">
+                    <TextBlock TextWrapping="WrapWithOverflow" Text="{DynamicResource Summary}"></TextBlock>
+                </Label>
+                <Rectangle Fill="Green" Height="3" Width="137" Canvas.Left="10" Canvas.Top="47" RadiusX="10" RadiusY="10"></Rectangle>
+                <Label Name="racunLabel" Foreground="White" Height="Auto" Margin="16,0">
+                    
+                </Label>
+                <Rectangle Fill="Green" Height="3" Width="137" Canvas.Left="10" Canvas.Top="47" RadiusX="10" RadiusY="10"></Rectangle>
+                <Label Name="cijenaLabel" Foreground="White" Height="Auto" Margin="16,0"/>
 
 
-            <Label Foreground="White" Canvas.Left="22" Canvas.Top="102" Height="25" Width="36">Sides</Label>
-            <Label Foreground="White" Canvas.Left="94" Canvas.Top="101" Height="26" Width="53">Tomato</Label>
-            <Label Foreground="White" Canvas.Left="94" Canvas.Top="121" Height="26" Width="53">Lettuce</Label>
-            <Label Foreground="White" Canvas.Left="94" Canvas.Top="140" Height="26" Width="53">Ketchup</Label>
+            </StackPanel>
+        </ScrollViewer>
+        
 
+        
+        
+        
+        
+        
+        
+        
+        
 
-            <Label Foreground="White" Canvas.Left="22" Canvas.Top="162" Height="25" Width="36">Drinks</Label>
-            <Label Foreground="White" Canvas.Left="94" Canvas.Top="161" Height="26" Width="53">Coke</Label>
-
-            <Rectangle Fill="Green" Height="3" Width="137" Canvas.Left="10" Canvas.Top="187" RadiusX="10" RadiusY="10"></Rectangle>
-            <Label Foreground="White" Canvas.Left="22" Canvas.Top="197" Height="25" Width="36">Total</Label>
-            <Label Foreground="White" Canvas.Left="94" Canvas.Top="197" Height="26" Width="53">6KM</Label>
-
-            <Button Content="Finish" Background="Green" Canvas.Left="35" Canvas.Top="243" BorderBrush="Green" Height="33" Width="81"></Button>
-
-
-
+        <Canvas Grid.Row="2" Background="Gray">
+            <Button Content="{DynamicResource Finish}" Background="Green" BorderBrush="Green" Height="33" Width="81" Canvas.Left="37" Canvas.Top="10" Click="Button_Click_2"/>
         </Canvas>
-
-
-        <Canvas Grid.Row="2" Background="Gray"></Canvas>
 
 
 

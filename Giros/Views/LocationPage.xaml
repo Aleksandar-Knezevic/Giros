@@ -8,12 +8,12 @@
       Title="LocationPage" Height="364" Width="714">
 
     <Grid Background="White">
-        <Canvas Background="Transparent" x:Name="dineInCanvas" Margin="80,16,414,71" MouseLeftButtonDown="selectDineInCanvas">
+        <Canvas Background="Transparent" x:Name="DineInCanvas" Margin="80,16,414,71" MouseLeftButtonDown="selectDineInCanvas">
             <Image Source="/Resources/images/dineIn.png" Canvas.Top="10" Height="224" Width="161" Canvas.Left="29"/>
-            <Label Content="{DynamicResource dineIn}" Canvas.Left="83" Canvas.Top="210"></Label>
+            <Label Content="{DynamicResource DineIn}" Canvas.Left="83" Canvas.Top="210"></Label>
         </Canvas>
 
-        <Canvas Background="Transparent" x:Name="takeawayCanvas" Margin="414,10,82,71" MouseLeftButtonDown="selectTakeawayCanvas">
+        <Canvas Background="Transparent" x:Name="TakeawayCanvas" Margin="414,10,82,71" MouseLeftButtonDown="selectTakeawayCanvas">
             <Image Source="/Resources/images/takeaway.png" Canvas.Left="19" Height="207" Width="169" Canvas.Top="19"/>
             <Label Content="{DynamicResource Takeaway}" Canvas.Left="75" Canvas.Top="216"></Label>
         </Canvas>

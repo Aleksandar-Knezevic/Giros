@@ -9,17 +9,17 @@
       Title="SizePage">
 
     <Grid Background="White">
-        <Canvas x:Name="smallCanvas" Grid.Column="1" Grid.Row="1" Margin="31,15,540,35" Width="200" MouseLeftButtonDown="selectSmallCanvas">
+        <Canvas x:Name="SmallCanvas" Grid.Column="1" Grid.Row="1" Margin="31,15,540,35" Width="200" MouseLeftButtonDown="selectSmallCanvas">
             <Image Source="/Resources/images/gyro.png" Canvas.Top="61" Height="149" Width="107" Canvas.Left="42"/>
             <Label Content="{DynamicResource Small}" Canvas.Left="83" Canvas.Top="210"></Label>
         </Canvas>
 
-        <Canvas x:Name="mediumCanvas" Grid.Column="1" Grid.Row="1" Margin="287,15,284,35" Width="200" MouseLeftButtonDown="selectMediumCanvas">
+        <Canvas x:Name="MediumCanvas" Grid.Column="1" Grid.Row="1" Margin="287,15,284,35" Width="200" MouseLeftButtonDown="selectMediumCanvas">
             <Image Source="/Resources/images/gyro.png" Canvas.Left="33" Height="163" Width="133" Canvas.Top="41"/>
             <Label Content="{DynamicResource Medium}" Canvas.Left="83" Canvas.Top="204"></Label>
         </Canvas>
 
-        <Canvas x:Name="largeCanvas" Grid.Column="1" Grid.Row="1" Margin="541,15,30,35" Width="200" MouseLeftButtonDown="selectLargeCanvas">
+        <Canvas x:Name="LargeCanvas" Grid.Column="1" Grid.Row="1" Margin="541,15,30,35" Width="200" MouseLeftButtonDown="selectLargeCanvas">
             <Image Source="/Resources/images/gyro.png" Height="239" Width="180" Canvas.Left="10" Canvas.Top="-7"/>
 
             <Label Content="{DynamicResource Large}" Canvas.Left="92" Canvas.Top="208"></Label>

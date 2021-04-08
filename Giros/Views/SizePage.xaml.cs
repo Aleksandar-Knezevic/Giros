@@ -27,31 +27,31 @@ namespace Giros.Views
 
         private void selectSmallCanvas(object sender, MouseButtonEventArgs e)
         {
-            smallCanvas.Background = Brushes.LightGreen;
-            if (mediumCanvas.Background == Brushes.LightGreen)
-                mediumCanvas.Background = Brushes.Transparent;
-            if (largeCanvas.Background == Brushes.LightGreen)
-                largeCanvas.Background = Brushes.Transparent;
+            SmallCanvas.Background = Brushes.LightGreen;
+            if (MediumCanvas.Background == Brushes.LightGreen)
+                MediumCanvas.Background = Brushes.Transparent;
+            if (LargeCanvas.Background == Brushes.LightGreen)
+                LargeCanvas.Background = Brushes.Transparent;
 
         }
 
         private void selectMediumCanvas(object sender, MouseButtonEventArgs e)
         {
-            mediumCanvas.Background = Brushes.LightGreen;
-            if (smallCanvas.Background == Brushes.LightGreen)
-                smallCanvas.Background = Brushes.Transparent;
-            if (largeCanvas.Background == Brushes.LightGreen)
-                largeCanvas.Background = Brushes.Transparent;
+            MediumCanvas.Background = Brushes.LightGreen;
+            if (SmallCanvas.Background == Brushes.LightGreen)
+                SmallCanvas.Background = Brushes.Transparent;
+            if (LargeCanvas.Background == Brushes.LightGreen)
+                LargeCanvas.Background = Brushes.Transparent;
 
         }
 
         private void selectLargeCanvas(object sender, MouseButtonEventArgs e)
         {
-            largeCanvas.Background = Brushes.LightGreen;
-            if (mediumCanvas.Background == Brushes.LightGreen)
-                mediumCanvas.Background = Brushes.Transparent;
-            if (smallCanvas.Background == Brushes.LightGreen)
-                smallCanvas.Background = Brushes.Transparent;
+            LargeCanvas.Background = Brushes.LightGreen;
+            if (MediumCanvas.Background == Brushes.LightGreen)
+                MediumCanvas.Background = Brushes.Transparent;
+            if (SmallCanvas.Background == Brushes.LightGreen)
+                SmallCanvas.Background = Brushes.Transparent;
         }
     }
 }

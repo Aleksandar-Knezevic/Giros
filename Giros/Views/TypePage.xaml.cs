@@ -27,29 +27,29 @@ namespace Giros.Views
 
         private void selectChickenCanvas(object sender, MouseButtonEventArgs e)
         {
-            chickenCanvas.Background = Brushes.LightGreen;
-            if (porkCanvas.Background == Brushes.LightGreen)
-                porkCanvas.Background = Brushes.Transparent;
-            if (mixCanvas.Background == Brushes.LightGreen)
-                mixCanvas.Background = Brushes.Transparent;
+            ChickenCanvas.Background = Brushes.LightGreen;
+            if (PorkCanvas.Background == Brushes.LightGreen)
+                PorkCanvas.Background = Brushes.Transparent;
+            if (MixedCanvas.Background == Brushes.LightGreen)
+                MixedCanvas.Background = Brushes.Transparent;
         }
 
         private void selectPorkCanvas(object sender, MouseButtonEventArgs e)
         {
-            porkCanvas.Background = Brushes.LightGreen;
-            if (chickenCanvas.Background == Brushes.LightGreen)
-                chickenCanvas.Background = Brushes.Transparent;
-            if (mixCanvas.Background == Brushes.LightGreen)
-                mixCanvas.Background = Brushes.Transparent;
+            PorkCanvas.Background = Brushes.LightGreen;
+            if (ChickenCanvas.Background == Brushes.LightGreen)
+                ChickenCanvas.Background = Brushes.Transparent;
+            if (MixedCanvas.Background == Brushes.LightGreen)
+                MixedCanvas.Background = Brushes.Transparent;
         }
 
         private void selectMixCanvas(object sender, MouseButtonEventArgs e)
         {
-            mixCanvas.Background = Brushes.LightGreen;
-            if (porkCanvas.Background == Brushes.LightGreen)
-                porkCanvas.Background = Brushes.Transparent;
-            if (chickenCanvas.Background == Brushes.LightGreen)
-                chickenCanvas.Background = Brushes.Transparent;
+            MixedCanvas.Background = Brushes.LightGreen;
+            if (PorkCanvas.Background == Brushes.LightGreen)
+                PorkCanvas.Background = Brushes.Transparent;
+            if (ChickenCanvas.Background == Brushes.LightGreen)
+                ChickenCanvas.Background = Brushes.Transparent;
         }
 
     }

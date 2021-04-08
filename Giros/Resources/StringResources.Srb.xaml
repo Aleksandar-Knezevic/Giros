@@ -15,8 +15,8 @@
     <system:String x:Key="Finish">Kraj</system:String>
     <system:String x:Key="Tomato">Paradajz</system:String>
     <system:String x:Key="Cucumber">Krastavac</system:String>
-    <system:String x:Key="hotSauce">Ljuti sos</system:String>
-    <system:String x:Key="whiteSauce">Caciki</system:String>
+    <system:String x:Key="Hot Sauce">Ljuti sos</system:String>
+    <system:String x:Key="White Sauce">Caciki</system:String>
     <system:String x:Key="Cabbage">Kupus</system:String>
     <system:String x:Key="Fries">Pomfrit</system:String>
     <system:String x:Key="Onion">Luk</system:String>
@@ -27,15 +27,21 @@
     <system:String x:Key="Mustard">Senf</system:String>
     <system:String x:Key="Coke">Koka Kola</system:String>
     <system:String x:Key="Pepsi">Pepsi</system:String>
-    <system:String x:Key="mineralWater">Kisela voda</system:String>
-    <system:String x:Key="regularWater">Obična voda</system:String>
+    <system:String x:Key="Mineral Water">Kisela voda</system:String>
+    <system:String x:Key="Regular Water">Obična voda</system:String>
     <system:String x:Key="Fanta">Fanta</system:String>
-    <system:String x:Key="orangeJuice">Sok od narandže</system:String>
+    <system:String x:Key="Orange Juice">Sok od narandže</system:String>
     <system:String x:Key="Apple Juice">Sok od jabuke</system:String>
-    <system:String x:Key="exoticLimeta">Exotic limeta</system:String>
-    <system:String x:Key="exoticKruska">Exotic kruška</system:String>
+    <system:String x:Key="Exotic Limeta">Exotic limeta</system:String>
+    <system:String x:Key="Exotic Kruska">Exotic kruška</system:String>
     <system:String x:Key="Beer">Pivo</system:String>
-    <system:String x:Key="dineIn">Na tanjir</system:String>
+    <system:String x:Key="DineIn">Na tanjir</system:String>
     <system:String x:Key="Takeaway">Za ponijeti</system:String>
+    <system:String x:Key="Type">Tip</system:String>
+    <system:String x:Key="Size">Veličina</system:String>
+    <system:String x:Key="Sides">Prilozi</system:String>
+    <system:String x:Key="Drinks">Piće</system:String>
+    <system:String x:Key="Location">Lokacija</system:String>
+    <system:String x:Key="Summary">Informacije o narudžbi</system:String>
     
 </ResourceDictionary>

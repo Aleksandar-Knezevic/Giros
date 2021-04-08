@@ -28,13 +28,13 @@
 
         <Canvas Background="Transparent" x:Name="exoticKruskaCanvas" Height="150" Width="150" Margin="534,10,191,402" MouseLeftButtonDown="exoticKruskaBackground" Uid="11">
             <Image Source="/Resources/images/exoticKruska.png" Height="174" Width="140" Canvas.Top="-24"/>
-            <Label Content="{DynamicResource exoticLimeta}" Canvas.Left="40" Canvas.Top="126"></Label>
+            <Label Content="{DynamicResource Exotic Limeta}" Canvas.Left="40" Canvas.Top="126"></Label>
         </Canvas>
 
 
         <Canvas Background="Transparent" Name="exoticLimetaCanvas" Height="150" Width="150" Margin="191,190,534,222" MouseLeftButtonDown="exoticLimetaBackground" Uid="10">
             <Image Source="/Resources/images/exoticLimeta.png" Height="180" Width="132" Canvas.Left="10" Canvas.Top="-16"/>
-            <Label Content="{DynamicResource exoticLimeta}" Canvas.Left="41" Canvas.Top="126"></Label>
+            <Label Content="{DynamicResource Exotic Limeta}" Canvas.Left="41" Canvas.Top="126"></Label>
         </Canvas>
 
 
@@ -46,7 +46,7 @@
 
         <Canvas Background="Transparent" x:Name="mineralWaterCanvas" Height="150" Width="150" Margin="10,370,715,42" MouseLeftButtonDown="mineralWaterBackground" Uid="3">
             <Image Source="/Resources/images/mineralWater.png" Height="131" Width="131" Canvas.Top="10" Canvas.Left="9"/>
-            <Label Content="{DynamicResource mineralWater}" Canvas.Left="43" Canvas.Top="126"></Label>
+            <Label Content="{DynamicResource Mineral Water}" Canvas.Left="43" Canvas.Top="126"></Label>
         </Canvas>
 
         <Canvas Background="Transparent" x:Name="pepsiCanvas" Height="150" Width="150" Margin="360,190,365,222" MouseLeftButtonDown="pepsiBackground" Uid="2">
@@ -57,12 +57,12 @@
 
         <Canvas Background="Transparent" x:Name="regularWaterCanvas" Height="150" Width="150" Margin="534,190,191,222" MouseLeftButtonDown="regularWaterBackground" Uid="4">
             <Image Source="/Resources/images/regularWater.png" Height="114" Width="114" Canvas.Top="10" Canvas.Left="18"/>
-            <Label Content="{DynamicResource regularWater}" Canvas.Left="39" Canvas.Top="123"></Label>
+            <Label Content="{DynamicResource Regular Water}" Canvas.Left="39" Canvas.Top="123"></Label>
         </Canvas>
 
         <Canvas Background="Transparent" x:Name="orangeJuiceCanvas" Height="150" Width="150" Margin="191,370,534,42" MouseLeftButtonDown="orangeJuiceBackground" Uid="8">
             <Image Source="/Resources/images/orangeJuice.png" Height="116" Width="116" Canvas.Top="10" Canvas.Left="24"/>
-            <Label Content="{DynamicResource orangeJuice}" Canvas.Left="29" Canvas.Top="126"></Label>
+            <Label Content="{DynamicResource Orange Juice}" Canvas.Left="29" Canvas.Top="126"></Label>
         </Canvas>
 
 
