@@ -8,7 +8,7 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="SizePage">
 
-    <Grid Background="White">
+    <Grid>
         <Canvas x:Name="SmallCanvas" Grid.Column="1" Grid.Row="1" Margin="31,15,540,35" Width="200" MouseLeftButtonDown="selectSmallCanvas">
             <Image Source="/Resources/images/gyro.png" Canvas.Top="61" Height="149" Width="107" Canvas.Left="42"/>
             <Label Content="{DynamicResource Small}" Canvas.Left="83" Canvas.Top="210"></Label>

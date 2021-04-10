@@ -43,5 +43,7 @@
     <system:String x:Key="Drinks">Drinks</system:String>
     <system:String x:Key="Location">Location</system:String>
     <system:String x:Key="Summary">Order Summary</system:String>
-    
+    <system:String x:Key="Serbian">Serbian</system:String>
+    <system:String x:Key="English">English</system:String>
+
 </ResourceDictionary>

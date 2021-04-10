@@ -8,7 +8,7 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="TypePage">
 
-    <Grid Background="White">
+    <Grid>
         <Canvas x:Name="ChickenCanvas" Grid.Column="1" Grid.Row="1" Margin="31,15,540,35" Width="200" MouseLeftButtonDown="selectChickenCanvas">
             <Image Source="/Resources/images/hen.png" Canvas.Left="24" Canvas.Top="10" Height="232" Width="166"/>
             <Label Content="{DynamicResource Chicken}" Canvas.Left="76" Canvas.Top="209"></Label>

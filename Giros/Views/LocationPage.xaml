@@ -7,7 +7,7 @@
       mc:Ignorable="d"
       Title="LocationPage" Height="364" Width="714">
 
-    <Grid Background="White">
+    <Grid>
         <Canvas Background="Transparent" x:Name="DineInCanvas" Margin="80,16,414,71" MouseLeftButtonDown="selectDineInCanvas">
             <Image Source="/Resources/images/dineIn.png" Canvas.Top="10" Height="224" Width="161" Canvas.Left="29"/>
             <Label Content="{DynamicResource DineIn}" Canvas.Left="83" Canvas.Top="210"></Label>

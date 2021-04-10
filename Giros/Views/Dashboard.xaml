@@ -6,7 +6,11 @@
         xmlns:local="clr-namespace:Giros.Views"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
-        Title="Dashboard" Height="542.288" Width="976.529">
+        Title="Dashboard" Height="542" Width="976"
+        Background="{DynamicResource MaterialDesignPaper}"
+        FontFamily="{DynamicResource MaterialDesignFont}"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        WindowStartupLocation="CenterScreen">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="1*"/>
@@ -35,15 +39,21 @@
 
         <Button Width="150" Content="{DynamicResource Previous}" Margin="201,10,456,22" Grid.Column="1" Grid.Row="2" Click="Button_Click_1"/>
 
-        <Image Source="/Resources/images/user.png" Margin="47,32,38,30"></Image>
+        <Image VerticalAlignment="Center" HorizontalAlignment="Center" Source="/Resources/images/user.png" Margin="43,41,43,21"></Image>
 
-        <materialDesign:PackIcon Kind="Planet" Margin="31,10,0,0" />
+        
 
-        <materialDesign:PackIcon Kind="Brush" Margin="79,10,0,0"/>
+        <materialDesign:PackIcon Kind="Brush" Margin="74,10,0,0"/>
 
-        <materialDesign:PackIcon Kind="Logout"  Margin="116,10,0,0"/>
+        <materialDesign:PackIcon Kind="Logout"  Margin="116,10,0,0" MouseLeftButtonDown="LogOut"/>
 
-        <Label Content=" Aleksandar" Margin="47,92,38,10"/>
+        <materialDesign:PackIcon Kind="Planet" Margin="31,10,0,0" MouseLeftButtonDown="planetClicked"/>
+        <ComboBox Name="languagesComboBox" Margin="31,10,94,93" Visibility="Hidden" SelectionChanged="ChangeLaguage">
+            <ComboBoxItem  Name="Serbian" IsSelected="True" Content="{DynamicResource Serbian}"></ComboBoxItem>
+            <ComboBoxItem Name="English" Content="{DynamicResource English}"></ComboBoxItem>
+        </ComboBox>
+
+        <Label VerticalAlignment="Bottom" HorizontalAlignment="Center" Name="usernameLabel" Width="Auto" Height="Auto"/>
 
         <ScrollViewer Grid.Row="1"  Background="Gray" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
             <StackPanel x:Name="racunStackPanel" >

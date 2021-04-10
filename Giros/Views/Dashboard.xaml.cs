@@ -35,6 +35,7 @@ namespace Giros.Views
         String location;
         GyroDB context;
         int currId;
+        staff currentlyLogged;
 
         //DrinkPage drinkPage = new DrinkPage();
         //SidePage sidePage = new SidePage();
@@ -54,10 +55,18 @@ namespace Giros.Views
             initializeStackPanel();
 
             
+
             mainFrame.Source = typePage;
 
            
            
+        }
+
+        public Dashboard(staff s, int language): this()
+        {
+            currentlyLogged = s;
+            languagesComboBox.SelectedIndex = language;
+            usernameLabel.Content = s.username;
         }
 
         public void initializeStackPanel()
@@ -66,7 +75,6 @@ namespace Giros.Views
             foreach (var o in orders)
             {
                 Grid g =  createGrid(o.id);
-                g.Uid = o.id.ToString();
                 myStackPanel.Children.Add(g);
              }
         }
@@ -85,12 +93,13 @@ namespace Giros.Views
                     if (c.Background == Brushes.LightGreen)
                     {
                         type = c.Name.Substring(0, c.Name.Length - 6);
-                        break;
+                        mainFrame.Source = sizePage;
+                        mainFrame.Navigated += goToSize;
+                        return;
                     }
 
                 }
-                mainFrame.Source = sizePage;
-                mainFrame.Navigated += goToSize;
+               
 
             }
 
@@ -107,10 +116,12 @@ namespace Giros.Views
                     if(c.Background == Brushes.LightGreen)
                     {
                         size = c.Name.Substring(0, c.Name.Length - 6);
+                        mainFrame.Source = sidePage;
+                        mainFrame.Navigated += goToSide;
+                        break;
                     }
                 }
-                mainFrame.Source = sidePage;
-                mainFrame.Navigated += goToSide;
+                
             }
 
 
@@ -168,43 +179,44 @@ namespace Giros.Views
                     if (c.Background == Brushes.LightGreen)
                     {
                         location = c.Name.Substring(0, c.Name.Length - 6);
-                        break;
+                        OrderModel om = new OrderModel()
+                        {
+                            drinkIds = new List<int>(drinkIds),
+                            location = location,
+                            sideIds = new List<int>(sideIds),
+                            size = size,
+                            type = type,
+                            staffId = currentlyLogged.id,
+
+                        };
+
+
+                        //Thread t = new Thread(() => addOrder(om));
+                        //t.SetApartmentState(ApartmentState.STA);
+                        //t.Start();
+
+                        nextButton.Content = Application.Current.FindResource("Next") as string;
+                        mainFrame.Source = typePage;
+                        size = null;
+                        type = null;
+                        location = null;
+                        drinkIds.Clear();
+                        sideIds.Clear();
+
+
+
+                        var scheduler = TaskScheduler.FromCurrentSynchronizationContext();
+                        Task<Grid> t = addOrder(om);
+                        t.Start(scheduler);
+                        Grid g = await t;
+                        myStackPanel.Children.Add(g);
+                        return;
                     }
 
                 }
 
 
-                OrderModel om = new OrderModel()
-                {
-                    drinkIds = new List<int>(drinkIds),
-                    location=location,
-                    sideIds = new List<int>(sideIds),
-                    size = size,
-                    type = type,
-                    staffId = 2,
-                    
-                };
-              
-
-                //Thread t = new Thread(() => addOrder(om));
-                //t.SetApartmentState(ApartmentState.STA);
-                //t.Start();
-
-                nextButton.Content = Application.Current.FindResource("Next") as string;
-                mainFrame.Source = typePage;
-                size = null;
-                type = null;
-                location = null;
-                drinkIds.Clear();
-                sideIds.Clear();
-
-
-
-                var scheduler = TaskScheduler.FromCurrentSynchronizationContext();
-                Task<Grid> t = addOrder(om);
-                t.Start(scheduler);
-                Grid g = await t;
-                myStackPanel.Children.Add(g);
+                
 
             }
                 
@@ -490,16 +502,29 @@ namespace Giros.Views
             String type = (Application.Current.FindResource("Type") as string) + "\t" + (Application.Current.FindResource(o.type) as string) + "\n";
             String size = (Application.Current.FindResource("Size") as string) + "\t" + (Application.Current.FindResource(o.size) as string) + "\n";
             String sides = Application.Current.FindResource("Sides") as string;
-            foreach (var side in o.sides)
-                sides += "\t" + (Application.Current.FindResource(side.name) as string) + "\n";
+            if (o.sides.Count==0)
+                sides += "\n";
+            else
+            {
+                foreach (var side in o.sides)
+                    sides += "\t" + (Application.Current.FindResource(side.name) as string) + "\n";
+            }
+            
             
             String drinks = Application.Current.FindResource("Drinks") as string;
-            foreach (var drink in o.drinks)
+            if (o.drinks.Count==0)
+                drinks += "\n";
+            else
             {
-                drinks += "\t" + (Application.Current.FindResource(drink.name) as string) + "\n";
-                cijena += drink.price;
+                foreach (var drink in o.drinks)
+                {
+                    drinks += "\t" + (Application.Current.FindResource(drink.name) as string) + "\n";
+                    cijena += drink.price;
+
+                }
 
             }
+           
                 
             String location = (Application.Current.FindResource("Location") as string) + "\t" + (Application.Current.FindResource(o.location) as string) +  "\n";
             string racunString = type + size + sides + drinks + location;
@@ -559,7 +584,50 @@ namespace Giros.Views
                 cijenaLabel.Content = "";
                 initializeStackPanel();
             });
+            currId = 0;
 
+        }
+
+        private void planetClicked(object sender, MouseButtonEventArgs e)
+        {
+            languagesComboBox.IsDropDownOpen = true;
+        }
+
+           
+       
+
+        private void ChangeLaguage(object sender, SelectionChangedEventArgs e)
+        {
+
+            var resources = new ResourceDictionary();
+
+            if (languagesComboBox.SelectionBoxItem.ToString().Equals(Application.Current.FindResource("Serbian") as string))
+            {
+               
+                resources.Source = new Uri("/Resources/StringResources.xaml", UriKind.Relative);
+                
+            }
+                
+
+            else if(languagesComboBox.SelectionBoxItem.ToString().Equals(Application.Current.FindResource("English") as string))
+            {
+                resources.Source = new Uri("/Resources/StringResources.Srb.xaml", UriKind.Relative);
+            }
+                
+
+
+
+            Application.Current.Resources.MergedDictionaries.Add(resources);
+
+            if (currId != 0)
+                displayInfo(currId);
+        }
+
+        private void LogOut(object sender, MouseButtonEventArgs e)
+        {
+            Login login = new Login();
+            this.Close();
+            login.Show();
         }
     }
 }

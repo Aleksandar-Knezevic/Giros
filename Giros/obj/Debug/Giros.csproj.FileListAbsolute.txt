@@ -77,3 +77,11 @@ C:\Users\aleks\OneDrive\Radna površina\C#\Giros\Giros\obj\Debug\Views\LocationP
 C:\Users\aleks\OneDrive\Radna površina\C#\Giros\Giros\obj\Debug\Views\LocationPage.baml
 C:\Users\aleks\OneDrive\Radna površina\C#\Giros\Giros\obj\Debug\Views\OrderCard.g.cs
 C:\Users\aleks\OneDrive\Radna površina\C#\Giros\Giros\obj\Debug\Views\OrderCard.baml
+C:\Users\aleks\OneDrive\Radna površina\C#\Giros\Giros\obj\Debug\Views\AdminPanel.g.cs
+C:\Users\aleks\OneDrive\Radna površina\C#\Giros\Giros\obj\Debug\Views\AdminPanel.baml
+C:\Users\aleks\OneDrive\Radna površina\C#\Giros\Giros\bin\Debug\LiveCharts.dll
+C:\Users\aleks\OneDrive\Radna površina\C#\Giros\Giros\bin\Debug\LiveCharts.Wpf.dll
+C:\Users\aleks\OneDrive\Radna površina\C#\Giros\Giros\bin\Debug\LiveCharts.pdb
+C:\Users\aleks\OneDrive\Radna površina\C#\Giros\Giros\bin\Debug\LiveCharts.xml
+C:\Users\aleks\OneDrive\Radna površina\C#\Giros\Giros\bin\Debug\LiveCharts.Wpf.pdb
+C:\Users\aleks\OneDrive\Radna površina\C#\Giros\Giros\bin\Debug\LiveCharts.Wpf.xml

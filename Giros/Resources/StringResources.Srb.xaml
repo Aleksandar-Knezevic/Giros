@@ -43,5 +43,7 @@
     <system:String x:Key="Drinks">Piće</system:String>
     <system:String x:Key="Location">Lokacija</system:String>
     <system:String x:Key="Summary">Informacije o narudžbi</system:String>
-    
+    <system:String x:Key="Serbian">Srpski</system:String>
+    <system:String x:Key="English">Engleski</system:String>
+
 </ResourceDictionary>

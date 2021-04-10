@@ -1,0 +1,85 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Giros.Views"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:chartingToolkit="clr-namespace:System.Windows.Controls.DataVisualization.Charting;assembly=System.Windows.Controls.DataVisualization.Toolkit" xmlns:Wpf="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf" x:Class="Giros.Views.AdminPanel"
+        mc:Ignorable="d"
+        Title="AdminPanel" Height="542" Width="976"
+        >
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="5*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="5*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+
+        <Image VerticalAlignment="Center" HorizontalAlignment="Center" Source="/Resources/images/user.png" Margin="43,41,43,21"></Image>
+
+
+
+        <materialDesign:PackIcon Kind="Brush" Margin="74,10,0,0"/>
+
+        <materialDesign:PackIcon Kind="Logout"  Margin="116,10,0,0" MouseLeftButtonDown="LogOut"/>
+
+        <materialDesign:PackIcon Kind="Planet" Margin="31,10,0,0" MouseLeftButtonDown="planetClicked"/>
+        <ComboBox Name="languagesComboBox" Margin="31,10,94,93" Visibility="Hidden" SelectionChanged="ChangeLaguage">
+            <ComboBoxItem  Name="Serbian" IsSelected="True" Content="{DynamicResource Serbian}"></ComboBoxItem>
+            <ComboBoxItem Name="English" Content="{DynamicResource English}"></ComboBoxItem>
+        </ComboBox>
+
+        <Label VerticalAlignment="Bottom" HorizontalAlignment="Center" Name="usernameLabel" Width="Auto" Height="Auto"/>
+
+
+        <ScrollViewer Grid.Row="1" Grid.Column="1" VerticalScrollBarVisibility="Auto">
+            <StackPanel Margin="20">
+
+
+
+                <Grid>
+                    <Wpf:PieChart HorizontalAlignment="Left" Height="210" Margin="92,10,0,0" VerticalAlignment="Top" Width="206"
+                      Series="{Binding TypeCollection}" LegendLocation="Bottom">
+                    </Wpf:PieChart>
+
+
+                    <Wpf:PieChart  HorizontalAlignment="Left" Height="210" Margin="487,10,0,0" VerticalAlignment="Top" Width="204"
+                      Series="{Binding SizeCollection}" LegendLocation="Bottom">
+                    </Wpf:PieChart>
+                </Grid>
+               
+
+                <Wpf:CartesianChart Series="{Binding SideCollection}" Height="270" Canvas.Left="92" Canvas.Top="240" Width="599" Margin="0 50 0 0">
+                    <Wpf:CartesianChart.AxisX>
+                        <Wpf:Axis Title="Prilozi" Labels="{Binding SideLabels}"></Wpf:Axis>
+                    </Wpf:CartesianChart.AxisX>
+
+                    <Wpf:CartesianChart.AxisY>
+                        <Wpf:Axis Title="Broj narudzbi"></Wpf:Axis>
+                    </Wpf:CartesianChart.AxisY>
+                </Wpf:CartesianChart>
+
+                <Wpf:CartesianChart Series="{Binding DrinkCollection}" Height="270" Canvas.Left="92" Width="599" Margin="0 50 0 0">
+                    
+                    <Wpf:CartesianChart.AxisX>
+                        <Wpf:Axis Title="Pica" Labels="{Binding DrinkLabels}"></Wpf:Axis>
+                    </Wpf:CartesianChart.AxisX>
+
+                    <Wpf:CartesianChart.AxisY>
+                        <Wpf:Axis Title="Broj narudzbi"></Wpf:Axis>
+                    </Wpf:CartesianChart.AxisY>
+                </Wpf:CartesianChart>
+            </StackPanel>
+        </ScrollViewer>
+
+
+
+
+    </Grid>
+</Window>

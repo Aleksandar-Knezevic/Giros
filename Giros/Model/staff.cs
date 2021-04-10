@@ -25,6 +25,8 @@ namespace Giros.Model
         [StringLength(45)]
         public string password { get; set; }
 
+        public bool? isAdmin { get; set; }
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<order> orders { get; set; }
     }

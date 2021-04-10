@@ -7,7 +7,7 @@
       mc:Ignorable="d"
       Title="SidePage" Height="555.11" Width="831.205">
 
-    <Grid Background="White" Margin="0,0,30,10">
+    <Grid Margin="0,0,30,10">
 
 
         <Canvas Background="Transparent" x:Name="tomatoCanvas" Height="150" Width="150" Margin="10,10,671,395" MouseLeftButtonDown="tomatoBackground" Uid="1">

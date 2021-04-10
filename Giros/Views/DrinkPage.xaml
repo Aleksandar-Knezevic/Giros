@@ -8,7 +8,7 @@
       Title="DrinkPage" Height="562.5" Width="875"
       >
 
-    <Grid Background="White">
+    <Grid>
 
 
         <Canvas Background="Transparent" x:Name="appleJuiceCanvas" Height="150" Width="150" Margin="10,10,715,402" MouseLeftButtonDown="appleJuiceBackground" Uid="9">
