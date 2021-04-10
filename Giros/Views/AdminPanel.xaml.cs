@@ -24,10 +24,13 @@ namespace Giros.Views
     /// </summary>
     /// 
 
+    
+
    
 
     public partial class AdminPanel : Window
     {
+        staff currUser;
         GyroDB context;
         public SeriesCollection TypeCollection { get; set; }
         public SeriesCollection SizeCollection { get; set; }
@@ -52,6 +55,7 @@ namespace Giros.Views
             initialiseSize();
             initialiseSides();
             initialiseDrinks();
+            initialiseStaff();
 
             DataContext = this;
 
@@ -70,19 +74,19 @@ namespace Giros.Views
             {
                 new PieSeries
                 {
-                    Title = "Pork",
+                    Title = Application.Current.FindResource("Pork") as string,
                     Values = new ChartValues<ObservableValue> { new ObservableValue(porkCount) },
                     DataLabels = true
                 },
                 new PieSeries
                 {
-                    Title = "Chicken",
+                    Title = Application.Current.FindResource("Chicken") as string,
                     Values = new ChartValues<ObservableValue> { new ObservableValue(chickenCount) },
                     DataLabels = true
                 },
                 new PieSeries
                 {
-                    Title = "Mixed",
+                    Title = Application.Current.FindResource("Mixed") as string,
                     Values = new ChartValues<ObservableValue> { new ObservableValue(mixedCount) },
                     DataLabels = true
                 }
@@ -90,6 +94,7 @@ namespace Giros.Views
 
 
         }
+
 
         private void initialiseSize()
         {
@@ -100,24 +105,26 @@ namespace Giros.Views
             {
                 new PieSeries
                 {
-                    Title = "Small",
+                    Title = Application.Current.FindResource("Small") as string,
                     Values = new ChartValues<ObservableValue> { new ObservableValue(smallCount) },
                     DataLabels = true
                 },
                 new PieSeries
                 {
-                    Title = "Medium",
+                    Title = Application.Current.FindResource("Medium") as string,
                     Values = new ChartValues<ObservableValue> { new ObservableValue(mediumCount) },
                     DataLabels = true
                 },
                 new PieSeries
                 {
-                    Title = "Large",
+                    Title = Application.Current.FindResource("Large") as string,
                     Values = new ChartValues<ObservableValue> { new ObservableValue(larkeCount) },
                     DataLabels = true
                 }
             };
         }
+
+
 
         private void initialiseSides()
         {
@@ -129,14 +136,19 @@ namespace Giros.Views
             SideCollection.Add(
                     new ColumnSeries
                     {
-                        Title = "Pilozi",
+                        Title = Application.Current.FindResource("Sides") as string,
                         Values = values,
                         DataLabels=true
                     }
                     );
-            SideLabels = sides.Select(e => e.name).ToArray();
+            List<string> sideNames = new List<string>();
+            foreach (var side in sides)
+                sideNames.Add(Application.Current.FindResource(side.name) as string);
+            SideLabels = sideNames.ToArray();
             
         }
+
+
 
 
         private void initialiseDrinks()
@@ -149,13 +161,17 @@ namespace Giros.Views
             DrinkCollection.Add(
                     new ColumnSeries
                     {
-                        Title = "Pica",
+                        Title = Application.Current.FindResource("Drinks") as string,
                         Values = values,
                         DataLabels = true,
                         Fill=Brushes.Red
                     }
                     );
-            DrinkLabels = drinks.Select(e => e.name).ToArray();
+
+            List<String> drinkNames = new List<string>();
+            foreach (var drink in drinks)
+                drinkNames.Add(Application.Current.FindResource(drink.name) as string);
+            DrinkLabels = drinkNames.ToArray();
         }
 
 
@@ -216,10 +232,114 @@ namespace Giros.Views
 
 
             Application.Current.Resources.MergedDictionaries.Add(resources);
+            //if (TypeCollection != null)
+            //    TypeCollection.Clear();
+            //if (SizeCollection != null)
+            //    SizeCollection.Clear();
+            //if (SideCollection != null)
+            //    SideCollection.Clear();
+            //if (DrinkCollection != null)
+            //    DrinkCollection.Clear();
+            //if (SideLabels != null)
+            //    SideLabels = null;
+            //if (DrinkLabels != null)
+            //    DrinkLabels = null;
 
-            //initializeType();
-            //initialiseSize();
-            //initialiseSides();
+
+            DataContext = this;
+            initializeType();
+            initialiseSize();
+            initialiseSides();
+            initialiseDrinks();
+            
+            if (currUser!=null)
+                displayInfo(currUser.username);
+        }
+
+
+
+        private void initialiseStaff()
+        {
+            var staff = context.staffs.ToList();
+            foreach (var s in staff)
+            {
+                Grid g = createGrid(s.username);
+                myStackPanel.Children.Add(g);
+            }
+        }
+
+
+        private Grid createGrid(string username)
+        {
+            Grid g = new Grid();
+            g.MouseLeftButtonDown += (sender, e) => displayInfo(username);
+            g.Width = 90;
+            g.Height = 110;
+            //g.Background = Brushes.Gray;
+            g.Margin = new Thickness(20, 0 , 0, 0);
+            
+
+
+
+
+
+            Label l = new Label();
+           // l.Margin = new Thickness(42, 40, 8, 38);
+            l.FontSize = 15;
+            l.Content =username;
+            
+
+
+            Image im = new Image();
+            im.Source = new BitmapImage(new Uri("/Resources/images/staff.png", UriKind.Relative));
+            im.Width = 60;
+            im.Height = 80;
+            im.Margin = new Thickness(0, 15, 0, 0);
+
+
+            Border b = new Border();
+            b.BorderThickness = new Thickness(1);
+            b.BorderBrush = Brushes.Black;
+            
+
+
+            g.Children.Add(im);
+            // g.Children.Add(b);
+            g.Children.Add(l);
+            g.Children.Add(b);
+            l.VerticalAlignment = VerticalAlignment.Bottom;
+            l.HorizontalAlignment = HorizontalAlignment.Center;
+            im.VerticalAlignment = VerticalAlignment.Top;
+            im.HorizontalAlignment = HorizontalAlignment.Center;
+
+            return g;
+
+
+
+        }
+
+
+        private void displayInfo(string username)
+        {
+            var staff =  context.staffs.Where(e => e.username.Equals(username)).First();
+            currUser = staff;
+           
+            String name = (Application.Current.FindResource("Name") as string) + "\t" + staff.ime + "\n";
+            String surname = (Application.Current.FindResource("Surname") as string) + "\t" + staff.prezime + "\n";
+            String workSince = (Application.Current.FindResource("Works Since") as string) + "\t" + staff.zaposlenOd.Date.ToShortDateString() + "\n";
+            string phone = (Application.Current.FindResource("Phone") as string) + "\t" + staff.brojTelefona + "\n";
+            string paycheck = (Application.Current.FindResource("Paycheck") as string) + "\t" + staff.plata + "KM\n";
+            string total = (Application.Current.FindResource("Total Orders") as string) + "\t" + staff.orders.Count + "\n";
+
+
+
+
+            string racunString = name + surname + workSince + phone + paycheck + total;
+            Application.Current.Dispatcher.Invoke(() =>
+            {
+                staffInfoLabel.Content = racunString;
+            });
+
         }
     }
 

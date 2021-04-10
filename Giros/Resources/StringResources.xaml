@@ -45,5 +45,12 @@
     <system:String x:Key="Summary">Order Summary</system:String>
     <system:String x:Key="Serbian">Serbian</system:String>
     <system:String x:Key="English">English</system:String>
+    <system:String x:Key="StaffSummary">Staff summary</system:String>
+    <system:String x:Key="Name">Name</system:String>
+    <system:String x:Key="Surname">Surname</system:String>
+    <system:String x:Key="Works Since">Works since</system:String>
+    <system:String x:Key="Phone">Phone</system:String>
+    <system:String x:Key="Paycheck">Paycheck</system:String>
+    <system:String x:Key="Total Orders">Total Orders</system:String>
 
 </ResourceDictionary>

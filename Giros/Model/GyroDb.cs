@@ -58,6 +58,18 @@ namespace Giros.Model
                 .IsUnicode(false);
 
             modelBuilder.Entity<staff>()
+                .Property(e => e.ime)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<staff>()
+                .Property(e => e.prezime)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<staff>()
+                .Property(e => e.brojTelefona)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<staff>()
                 .HasMany(e => e.orders)
                 .WithRequired(e => e.staff)
                 .WillCascadeOnDelete(false);

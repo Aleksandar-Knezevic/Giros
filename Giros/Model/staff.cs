@@ -25,7 +25,24 @@ namespace Giros.Model
         [StringLength(45)]
         public string password { get; set; }
 
-        public bool? isAdmin { get; set; }
+        public bool isAdmin { get; set; }
+
+        [Required]
+        [StringLength(45)]
+        public string ime { get; set; }
+
+        [Required]
+        [StringLength(45)]
+        public string prezime { get; set; }
+
+        [Column(TypeName = "date")]
+        public DateTime zaposlenOd { get; set; }
+
+        [Required]
+        [StringLength(45)]
+        public string brojTelefona { get; set; }
+
+        public decimal plata { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<order> orders { get; set; }

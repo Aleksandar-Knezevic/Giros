@@ -24,6 +24,8 @@
         </Grid.RowDefinitions>
 
 
+        
+        
 
         <ScrollViewer Grid.Row="0" Grid.Column="1" Name="myScrollView" HorizontalScrollBarVisibility="Auto">
             <StackPanel x:Name="myStackPanel" VerticalAlignment="Center" Orientation="Horizontal"></StackPanel>

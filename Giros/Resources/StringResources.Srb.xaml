@@ -45,5 +45,12 @@
     <system:String x:Key="Summary">Informacije o narudžbi</system:String>
     <system:String x:Key="Serbian">Srpski</system:String>
     <system:String x:Key="English">Engleski</system:String>
+    <system:String x:Key="StaffSummary">Informacije o zaposlenom</system:String>
+    <system:String x:Key="Name">Ime</system:String>
+    <system:String x:Key="Surname">Prezime</system:String>
+    <system:String x:Key="Works Since">Zaposlen/a od</system:String>
+    <system:String x:Key="Phone">Telefon</system:String>
+    <system:String x:Key="Paycheck">Plata</system:String>
+    <system:String x:Key="Total orders">Ukupno narudžbi</system:String>
 
 </ResourceDictionary>

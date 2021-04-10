@@ -38,6 +38,13 @@
         <Label VerticalAlignment="Bottom" HorizontalAlignment="Center" Name="usernameLabel" Width="Auto" Height="Auto"/>
 
 
+        <ScrollViewer Grid.Row="0" Grid.Column="1" Name="myScrollView" HorizontalScrollBarVisibility="Auto">
+            <StackPanel x:Name="myStackPanel" VerticalAlignment="Center" Orientation="Horizontal"></StackPanel>
+        </ScrollViewer>
+        
+        
+        
+        
         <ScrollViewer Grid.Row="1" Grid.Column="1" VerticalScrollBarVisibility="Auto">
             <StackPanel Margin="20">
 
@@ -75,6 +82,25 @@
                         <Wpf:Axis Title="Broj narudzbi"></Wpf:Axis>
                     </Wpf:CartesianChart.AxisY>
                 </Wpf:CartesianChart>
+            </StackPanel>
+        </ScrollViewer>
+
+
+        <ScrollViewer Grid.Row="1"  Background="Gray" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
+            <StackPanel x:Name="racunStackPanel" >
+
+
+                <Label  FontWeight="Bold" Foreground="White" Canvas.Left="16" Canvas.Top="18" Height="Auto" Width="131" FontSize="15">
+                    <TextBlock TextWrapping="WrapWithOverflow" Text="{DynamicResource StaffSummary}"></TextBlock>
+                </Label>
+                <Rectangle Fill="Green" Height="3" Width="137" Canvas.Left="10" Canvas.Top="47" RadiusX="10" RadiusY="10"></Rectangle>
+                <Label Name="staffInfoLabel" Foreground="White" Height="Auto" Margin="16,0">
+
+                </Label>
+                <Rectangle Fill="Green" Height="3" Width="137" Canvas.Left="10" Canvas.Top="47" RadiusX="10" RadiusY="10"></Rectangle>
+                
+
+
             </StackPanel>
         </ScrollViewer>
 
