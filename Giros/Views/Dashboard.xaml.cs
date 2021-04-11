@@ -574,18 +574,22 @@ namespace Giros.Views
 
         private async void Button_Click_2(object sender, RoutedEventArgs e)
         {
-            var o = await context.orders.FindAsync(currId);
-            o.isActive = 0;
-            await context.SaveChangesAsync();
-
-            await Application.Current.Dispatcher.InvokeAsync(() =>
+            if(currId!=0)
             {
-                myStackPanel.Children.Clear();
-                racunLabel.Content = "";
-                cijenaLabel.Content = "";
-                initializeStackPanel();
-            });
-            currId = 0;
+                var o = await context.orders.FindAsync(currId);
+                o.isActive = 0;
+                await context.SaveChangesAsync();
+
+                await Application.Current.Dispatcher.InvokeAsync(() =>
+                {
+                    myStackPanel.Children.Clear();
+                    racunLabel.Content = "";
+                    cijenaLabel.Content = "";
+                    initializeStackPanel();
+                });
+                currId = 0;
+            }
+           
 
         }
 

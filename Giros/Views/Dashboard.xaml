@@ -92,7 +92,7 @@
         
 
         <Canvas Grid.Row="2" Background="Gray">
-            <Button Content="{DynamicResource Finish}"  Height="33" Width="81" Canvas.Left="37" Canvas.Top="10" Click="Button_Click_2"/>
+            <Button Content="{DynamicResource Finish}" Background="{DynamicResource PrimaryHueDarkBrush}"  Height="33" Width="81" Canvas.Left="37" Canvas.Top="10" Click="Button_Click_2"/>
         </Canvas>
 
 
