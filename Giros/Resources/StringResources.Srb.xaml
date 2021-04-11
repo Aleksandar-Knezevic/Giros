@@ -52,5 +52,9 @@
     <system:String x:Key="Phone">Telefon</system:String>
     <system:String x:Key="Paycheck">Plata</system:String>
     <system:String x:Key="Total orders">Ukupno narudžbi</system:String>
+    <system:String x:Key="Light">Svijetla</system:String>
+    <system:String x:Key="Dark">Tamna</system:String>
+    <system:String x:Key="DarkRed">Crveno-Tamna</system:String>
+    <system:String x:Key="NoOfOrders">Broj narudžbi</system:String>
 
 </ResourceDictionary>

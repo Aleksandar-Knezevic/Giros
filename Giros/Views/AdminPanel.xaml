@@ -8,6 +8,9 @@
         xmlns:chartingToolkit="clr-namespace:System.Windows.Controls.DataVisualization.Charting;assembly=System.Windows.Controls.DataVisualization.Toolkit" xmlns:Wpf="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf" x:Class="Giros.Views.AdminPanel"
         mc:Ignorable="d"
         Title="AdminPanel" Height="542" Width="976"
+        Background="{DynamicResource MaterialDesignPaper}"
+        FontFamily="{DynamicResource MaterialDesignFont}"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
         >
     <Grid>
         <Grid.ColumnDefinitions>
@@ -25,7 +28,7 @@
 
 
 
-        <materialDesign:PackIcon Kind="Brush" Margin="74,10,0,0"/>
+        <materialDesign:PackIcon Kind="Brush" Margin="74,10,0,0" MouseLeftButtonDown="BrushClicked"/>
 
         <materialDesign:PackIcon Kind="Logout"  Margin="116,10,0,0" MouseLeftButtonDown="LogOut"/>
 
@@ -33,6 +36,11 @@
         <ComboBox Name="languagesComboBox" Margin="31,10,94,93" Visibility="Hidden" SelectionChanged="ChangeLaguage">
             <ComboBoxItem  Name="Serbian" IsSelected="True" Content="{DynamicResource Serbian}"></ComboBoxItem>
             <ComboBoxItem Name="English" Content="{DynamicResource English}"></ComboBoxItem>
+        </ComboBox>
+        <ComboBox Name="themeComboBox" Margin="72,10,72,95" Visibility="Hidden" SelectionChanged="ChangeTheme" RenderTransformOrigin="0.588,0.435">
+            <ComboBoxItem  Name="Light" IsSelected="True" Content="{DynamicResource Light}"></ComboBoxItem>
+            <ComboBoxItem Name="Dark" Content="{DynamicResource Dark}"></ComboBoxItem>
+            <ComboBoxItem Name="DarkRed" Content="{DynamicResource DarkRed}"></ComboBoxItem>
         </ComboBox>
 
         <Label VerticalAlignment="Bottom" HorizontalAlignment="Center" Name="usernameLabel" Width="Auto" Height="Auto"/>
@@ -64,22 +72,22 @@
 
                 <Wpf:CartesianChart Series="{Binding SideCollection}" Height="270" Canvas.Left="92" Canvas.Top="240" Width="599" Margin="0 50 0 0">
                     <Wpf:CartesianChart.AxisX>
-                        <Wpf:Axis Title="Prilozi" Labels="{Binding SideLabels}"></Wpf:Axis>
+                        <Wpf:Axis Title="{DynamicResource Sides}" Labels="{Binding SideLabels}"></Wpf:Axis>
                     </Wpf:CartesianChart.AxisX>
 
                     <Wpf:CartesianChart.AxisY>
-                        <Wpf:Axis Title="Broj narudzbi"></Wpf:Axis>
+                        <Wpf:Axis Title="{DynamicResource NoOfOrders}"></Wpf:Axis>
                     </Wpf:CartesianChart.AxisY>
                 </Wpf:CartesianChart>
 
                 <Wpf:CartesianChart Series="{Binding DrinkCollection}" Height="270" Canvas.Left="92" Width="599" Margin="0 50 0 0">
                     
                     <Wpf:CartesianChart.AxisX>
-                        <Wpf:Axis Title="Pica" Labels="{Binding DrinkLabels}"></Wpf:Axis>
+                        <Wpf:Axis Title="{DynamicResource Drinks}" Labels="{Binding DrinkLabels}"></Wpf:Axis>
                     </Wpf:CartesianChart.AxisX>
 
                     <Wpf:CartesianChart.AxisY>
-                        <Wpf:Axis Title="Broj narudzbi"></Wpf:Axis>
+                        <Wpf:Axis Title="{DynamicResource NoOfOrders}"></Wpf:Axis>
                     </Wpf:CartesianChart.AxisY>
                 </Wpf:CartesianChart>
             </StackPanel>
@@ -93,11 +101,11 @@
                 <Label  FontWeight="Bold" Foreground="White" Canvas.Left="16" Canvas.Top="18" Height="Auto" Width="131" FontSize="15">
                     <TextBlock TextWrapping="WrapWithOverflow" Text="{DynamicResource StaffSummary}"></TextBlock>
                 </Label>
-                <Rectangle Fill="Green" Height="3" Width="137" Canvas.Left="10" Canvas.Top="47" RadiusX="10" RadiusY="10"></Rectangle>
+                <Rectangle Fill="{DynamicResource PrimaryHueDarkBrush}"  Height="3" Width="137" Canvas.Left="10" Canvas.Top="47" RadiusX="10" RadiusY="10"></Rectangle>
                 <Label Name="staffInfoLabel" Foreground="White" Height="Auto" Margin="16,0">
 
                 </Label>
-                <Rectangle Fill="Green" Height="3" Width="137" Canvas.Left="10" Canvas.Top="47" RadiusX="10" RadiusY="10"></Rectangle>
+                <Rectangle Fill="{DynamicResource PrimaryHueDarkBrush}"  Height="3" Width="137" Canvas.Left="10" Canvas.Top="47" RadiusX="10" RadiusY="10"></Rectangle>
                 
 
 

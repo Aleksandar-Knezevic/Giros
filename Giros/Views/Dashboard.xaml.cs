@@ -62,10 +62,11 @@ namespace Giros.Views
            
         }
 
-        public Dashboard(staff s, int language): this()
+        public Dashboard(staff s, int language, int theme): this()
         {
             currentlyLogged = s;
             languagesComboBox.SelectedIndex = language;
+            themeComboBox.SelectedIndex = theme;
             usernameLabel.Content = s.username;
         }
 
@@ -545,8 +546,8 @@ namespace Giros.Views
                 g.MouseLeftButtonDown += (sender, e) => displayInfo(i);
                 g.Width = 84;
                 g.Height = 102;
-                g.Background = Brushes.YellowGreen;
-                g.Margin = new Thickness(10, 0, 0, 0);
+                g.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString(Application.Current.FindResource("PrimaryHueDarkBrush").ToString()));
+            g.Margin = new Thickness(10, 0, 0, 0);
 
 
 
@@ -623,7 +624,7 @@ namespace Giros.Views
             if(content.Equals("Kraj")||content.Equals("Finish"))
                 nextButton.Content = Application.Current.FindResource("Finish") as string;
 
-            if (content.Equals("Dalje") || content.Equals("Next")) ;
+            if (content.Equals("Dalje") || content.Equals("Next"))
                 nextButton.Content = Application.Current.FindResource("Next") as string;
             
 
@@ -634,9 +635,69 @@ namespace Giros.Views
 
         private void LogOut(object sender, MouseButtonEventArgs e)
         {
-            Login login = new Login();
+            Login login = new Login(languagesComboBox.SelectedIndex, themeComboBox.SelectedIndex);
             this.Close();
             login.Show();
+        }
+
+        private void BrushClicked(object sender, MouseButtonEventArgs e)
+        {
+            themeComboBox.IsDropDownOpen = true;
+        }
+
+        private void ChangeTheme(object sender, SelectionChangedEventArgs e)
+        {
+            string selected = (e.AddedItems[0] as ComboBoxItem).Content as string;
+            if (selected != null)
+            {
+                if (selected.Equals(Application.Current.FindResource("Light")))
+                {
+                    var resource = new ResourceDictionary();
+                    resource.Source = new Uri("pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Light.xaml");
+                    var resource2 = new ResourceDictionary();
+                    resource2.Source = new Uri("pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Primary/MaterialDesignColor.Lime.xaml");
+                    var resource3 = new ResourceDictionary();
+                    resource3.Source = new Uri("pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Accent/MaterialDesignColor.Green.xaml");
+
+                    Application.Current.Resources.MergedDictionaries.Add(resource);
+                    Application.Current.Resources.MergedDictionaries.Add(resource2);
+                    Application.Current.Resources.MergedDictionaries.Add(resource3);
+
+                }
+                if (selected.Equals(Application.Current.FindResource("Dark")))
+                {
+                    var resource = new ResourceDictionary();
+                    resource.Source = new Uri("pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Dark.xaml");
+                    var resource2 = new ResourceDictionary();
+                    resource2.Source = new Uri("pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Primary/MaterialDesignColor.Lime.xaml");
+                    var resource3 = new ResourceDictionary();
+                    resource3.Source = new Uri("pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Accent/MaterialDesignColor.Green.xaml");
+                    Application.Current.Resources.MergedDictionaries.Add(resource);
+                    Application.Current.Resources.MergedDictionaries.Add(resource2);
+                    Application.Current.Resources.MergedDictionaries.Add(resource3);
+                }
+                if (selected.Equals(Application.Current.FindResource("DarkRed")))
+                {
+
+                    var resource = new ResourceDictionary();
+                    resource.Source = new Uri("pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Dark.xaml");
+                    var resource2 = new ResourceDictionary();
+                    resource2.Source = new Uri("pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Primary/MaterialDesignColor.Red.xaml");
+                    var resource3 = new ResourceDictionary();
+                    resource3.Source = new Uri("pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Accent/MaterialDesignColor.Orange.xaml");
+
+
+
+
+                    Application.Current.Resources.MergedDictionaries.Add(resource);
+                    Application.Current.Resources.MergedDictionaries.Add(resource2);
+                    Application.Current.Resources.MergedDictionaries.Add(resource3);
+
+                  
+                }
+                myStackPanel.Children.Clear();
+                initializeStackPanel();
+            }
         }
     }
 }

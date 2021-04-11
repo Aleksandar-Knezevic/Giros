@@ -36,6 +36,12 @@ namespace Giros
 
         }
 
+        public Login(int language, int theme):this()
+        {
+            languagesComboBox.SelectedIndex = language;
+            themeComboBox.SelectedIndex = theme;
+        }
+
         //private void SetLanguageDictionary()
         //{
         //    ResourceDictionary dict = new ResourceDictionary();
@@ -52,13 +58,13 @@ namespace Giros
             {
                 if((bool)u.First().isAdmin)
                 {
-                    AdminPanel d = new AdminPanel();
+                    AdminPanel d = new AdminPanel(languagesComboBox.SelectedIndex, themeComboBox.SelectedIndex);
                     d.Show();
                     this.Close();
                 }
                 else
                 {
-                    Dashboard d = new Dashboard(u.First(), languagesComboBox.SelectedIndex);
+                    Dashboard d = new Dashboard(u.First(), languagesComboBox.SelectedIndex, themeComboBox.SelectedIndex);
                     
                     d.Show();
                     this.Close();
@@ -100,5 +106,81 @@ namespace Giros
 
             Application.Current.Resources.MergedDictionaries.Add(resources);
         }
-    }
+
+        private void brushClicked(object sender, MouseButtonEventArgs e)
+        {
+            themeComboBox.IsDropDownOpen = true;
+        }
+
+        private void ChangeTheme(object sender, SelectionChangedEventArgs e)
+        {
+            string selected = (e.AddedItems[0] as ComboBoxItem).Content as string;
+            if(selected!=null)
+            {
+                if (selected.Equals(Application.Current.FindResource("Light")))
+                {
+                    var resource = new ResourceDictionary();
+                    resource.Source = new Uri("pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Light.xaml");
+                    var resource2 = new ResourceDictionary();
+                    resource2.Source = new Uri("pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Primary/MaterialDesignColor.Lime.xaml");
+                    var resource3 = new ResourceDictionary();
+                    resource3.Source = new Uri("pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Accent/MaterialDesignColor.Green.xaml");
+
+                    Application.Current.Resources.MergedDictionaries.Add(resource);
+                    Application.Current.Resources.MergedDictionaries.Add(resource2);
+                    Application.Current.Resources.MergedDictionaries.Add(resource3);
+
+                }
+                if (selected.Equals(Application.Current.FindResource("Dark")))
+                {
+                    var resource = new ResourceDictionary();
+                    resource.Source = new Uri("pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Dark.xaml");
+                    var resource2 = new ResourceDictionary();
+                    resource2.Source = new Uri("pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Primary/MaterialDesignColor.Lime.xaml");
+                    var resource3 = new ResourceDictionary();
+                    resource3.Source = new Uri("pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Accent/MaterialDesignColor.Green.xaml");
+                    Application.Current.Resources.MergedDictionaries.Add(resource);
+                    Application.Current.Resources.MergedDictionaries.Add(resource2);
+                    Application.Current.Resources.MergedDictionaries.Add(resource3);
+                }
+                if (selected.Equals(Application.Current.FindResource("DarkRed")))
+                {
+
+                    var resource = new ResourceDictionary();
+                    resource.Source = new Uri("pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Dark.xaml");
+                    var resource2 = new ResourceDictionary();
+                    resource2.Source = new Uri("pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Primary/MaterialDesignColor.Red.xaml");
+                    var resource3 = new ResourceDictionary();
+                    resource3.Source = new Uri("pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Accent/MaterialDesignColor.Orange.xaml");
+
+
+
+
+                    Application.Current.Resources.MergedDictionaries.Add(resource);
+                    Application.Current.Resources.MergedDictionaries.Add(resource2);
+                    Application.Current.Resources.MergedDictionaries.Add(resource3);
+                }
+            }
+           
+
+        }
+
+            //private void ChangeTheme(object sender, MouseButtonEventArgs e)
+            //{
+            //    var resource = new ResourceDictionary();
+            //    resource.Source = new Uri("pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Dark.xaml");
+            //    var resource2 = new ResourceDictionary();
+            //    resource2.Source = new Uri("pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Primary/MaterialDesignColor.Red.xaml");
+            //    var resource3 = new ResourceDictionary();
+            //    resource3.Source = new Uri("pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Accent/MaterialDesignColor.Orange.xaml");
+
+
+
+
+            //    Application.Current.Resources.MergedDictionaries.Add(resource);
+            //    Application.Current.Resources.MergedDictionaries.Add(resource2);
+            //    Application.Current.Resources.MergedDictionaries.Add(resource3);
+            //    //LoginWindow.FontFamily = new FontFamily("Century Gothic");
+            //}
+        }
 }

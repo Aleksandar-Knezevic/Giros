@@ -52,5 +52,8 @@
     <system:String x:Key="Phone">Phone</system:String>
     <system:String x:Key="Paycheck">Paycheck</system:String>
     <system:String x:Key="Total Orders">Total Orders</system:String>
-
+    <system:String x:Key="Light">Light</system:String>
+    <system:String x:Key="Dark">Dark</system:String>
+    <system:String x:Key="DarkRed">DarkRed</system:String>
+    <system:String x:Key="NoOfOrders">Number of Orders</system:String>
 </ResourceDictionary>

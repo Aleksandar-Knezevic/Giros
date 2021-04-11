@@ -11,21 +11,22 @@
         TextOptions.TextRenderingMode="Auto"
         Background="{DynamicResource MaterialDesignPaper}"
         FontFamily="{DynamicResource MaterialDesignFont}"
-        WindowStyle="None"
         xmlns:local="clr-namespace:Giros"
         mc:Ignorable="d"
         Title="Login" Height="350" Width="430"
+        MinHeight="350" MinWidth="430"
         WindowStartupLocation="CenterScreen"
+        Name="LoginWindow"
         >
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-        
-        
 
-        <Button Content="{DynamicResource Login}" Click="Button_Click" Margin="44,191,64,101" Height="50" HorizontalAlignment="Center" Width="103"/>
+
+
+        <Button Content="{DynamicResource Login}" Click="Button_Click" Margin="44,191,64,84" Height="Auto" HorizontalAlignment="Center" Width="103" Name="LoginButton"/>
         <TextBox x:Name="usernameBox" HorizontalAlignment="Center" Height="24" Margin="44,76,47,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <PasswordBox x:Name="passwordBox" HorizontalAlignment="Center" Height="22" Margin="44,132,47,0" VerticalAlignment="Top" Width="120"/>
 
@@ -38,10 +39,17 @@
         <materialDesign:PackIcon Kind="Planet" Margin="10,10,0,0" MouseLeftButtonDown="planetClicked"/>
 
 
-        <materialDesign:PackIcon Kind="Brush" Margin="44,10,0,0"/>
-        <ComboBox Name="languagesComboBox" Margin="15,10,185,307" Visibility="Hidden" SelectionChanged="ChangeLaguage">
+        <materialDesign:PackIcon Kind="Brush" Margin="44,10,0,0" MouseLeftButtonDown="brushClicked"/>
+        
+        <ComboBox Name="languagesComboBox" Margin="15,18,185,307" Visibility="Hidden" SelectionChanged="ChangeLaguage">
             <ComboBoxItem  Name="Serbian" IsSelected="True" Content="{DynamicResource Serbian}"></ComboBoxItem>
             <ComboBoxItem Name="English" Content="{DynamicResource English}"></ComboBoxItem>
+        </ComboBox>
+
+        <ComboBox Name="themeComboBox" Margin="49,18,151,307" Visibility="Hidden" SelectionChanged="ChangeTheme">
+            <ComboBoxItem  Name="Light" IsSelected="True" Content="{DynamicResource Light}"></ComboBoxItem>
+            <ComboBoxItem Name="Dark" Content="{DynamicResource Dark}"></ComboBoxItem>
+            <ComboBoxItem Name="DarkRed" Content="{DynamicResource DarkRed}"></ComboBoxItem>
         </ComboBox>
 
         <Image Source="/Resources/Images/GirosLogin.jpg" Grid.Column="1" Stretch="Fill" Margin="0,-12,-38,-10"/>
