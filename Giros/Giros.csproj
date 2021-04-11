@@ -322,6 +322,9 @@
   <ItemGroup>
     <Resource Include="Resources\images\staff.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\images\gyro.ico" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

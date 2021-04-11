@@ -11,6 +11,7 @@
         Background="{DynamicResource MaterialDesignPaper}"
         FontFamily="{DynamicResource MaterialDesignFont}"
         TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        Icon="/Resources/images/gyro.ico"
         >
     <Grid>
         <Grid.ColumnDefinitions>

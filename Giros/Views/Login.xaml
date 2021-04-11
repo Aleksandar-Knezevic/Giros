@@ -17,6 +17,7 @@
         MinHeight="350" MinWidth="430"
         WindowStartupLocation="CenterScreen"
         Name="LoginWindow"
+        Icon="/Resources/images/gyro.ico"
         >
     <Grid>
         <Grid.ColumnDefinitions>
