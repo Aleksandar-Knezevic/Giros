@@ -44,11 +44,16 @@ namespace Giros.Views
             if (context == null)
                 context = new GyroDB();
 
-            
-            
 
-            
 
+
+
+
+            SideCollection = new SeriesCollection();
+            TypeCollection = new SeriesCollection();
+            SizeCollection = new SeriesCollection();
+            DrinkCollection = new SeriesCollection();
+           
 
             InitializeComponent();
             initializeType();
@@ -57,7 +62,7 @@ namespace Giros.Views
             initialiseDrinks();
             initialiseStaff();
 
-            DataContext = this;
+           // DataContext = this;
 
             
 
@@ -70,27 +75,29 @@ namespace Giros.Views
             int chickenCount = context.orders.Where(e => e.type.Equals("Chicken")).Count();
             int porkCount = context.orders.Where(e => e.type.Equals("Pork")).Count();
             int mixedCount = context.orders.Where(e => e.type.Equals("Mixed")).Count();
-            TypeCollection = new SeriesCollection
+            TypeCollection.Clear();
+            TypeCollection.Add(new PieSeries
             {
-                new PieSeries
-                {
-                    Title = Application.Current.FindResource("Pork") as string,
-                    Values = new ChartValues<ObservableValue> { new ObservableValue(porkCount) },
-                    DataLabels = true
-                },
-                new PieSeries
-                {
-                    Title = Application.Current.FindResource("Chicken") as string,
-                    Values = new ChartValues<ObservableValue> { new ObservableValue(chickenCount) },
-                    DataLabels = true
-                },
+                Title = Application.Current.FindResource("Pork") as string,
+                Values = new ChartValues<ObservableValue> { new ObservableValue(porkCount) },
+                DataLabels = true
+            });
+            TypeCollection.Add(new PieSeries
+            {
+                Title = Application.Current.FindResource("Chicken") as string,
+                Values = new ChartValues<ObservableValue> { new ObservableValue(chickenCount) },
+                DataLabels = true
+            });
+
+            TypeCollection.Add(
                 new PieSeries
                 {
                     Title = Application.Current.FindResource("Mixed") as string,
                     Values = new ChartValues<ObservableValue> { new ObservableValue(mixedCount) },
                     DataLabels = true
-                }
-            };
+                });
+               
+            
 
 
         }
@@ -101,34 +108,39 @@ namespace Giros.Views
             int smallCount = context.orders.Where(e => e.size.Equals("Small")).Count();
             int mediumCount = context.orders.Where(e => e.size.Equals("Medium")).Count();
             int larkeCount = context.orders.Where(e => e.size.Equals("Large")).Count();
-            SizeCollection = new SeriesCollection
+            SizeCollection.Clear();
+            SizeCollection.Add(new PieSeries
             {
-                new PieSeries
-                {
-                    Title = Application.Current.FindResource("Small") as string,
-                    Values = new ChartValues<ObservableValue> { new ObservableValue(smallCount) },
-                    DataLabels = true
-                },
-                new PieSeries
-                {
-                    Title = Application.Current.FindResource("Medium") as string,
-                    Values = new ChartValues<ObservableValue> { new ObservableValue(mediumCount) },
-                    DataLabels = true
-                },
-                new PieSeries
-                {
-                    Title = Application.Current.FindResource("Large") as string,
-                    Values = new ChartValues<ObservableValue> { new ObservableValue(larkeCount) },
-                    DataLabels = true
-                }
-            };
+                Title = Application.Current.FindResource("Small") as string,
+                Values = new ChartValues<ObservableValue> { new ObservableValue(smallCount) },
+                DataLabels = true
+            });
+            SizeCollection.Add(new PieSeries
+            {
+                Title = Application.Current.FindResource("Medium") as string,
+                Values = new ChartValues<ObservableValue> { new ObservableValue(mediumCount) },
+                DataLabels = true
+            });
+            SizeCollection.Add(new PieSeries
+            {
+                Title = Application.Current.FindResource("Large") as string,
+                Values = new ChartValues<ObservableValue> { new ObservableValue(larkeCount) },
+                DataLabels = true
+            });
+
+               
+               
+               
+
+
         }
 
 
 
         private void initialiseSides()
         {
-            SideCollection = new SeriesCollection();
+            //SideCollection = new SeriesCollection();
+            SideCollection.Clear();
             var sides = context.sides.ToList();
             var values = new ChartValues<int>();
             foreach (var side in sides)
@@ -144,7 +156,10 @@ namespace Giros.Views
             List<string> sideNames = new List<string>();
             foreach (var side in sides)
                 sideNames.Add(Application.Current.FindResource(side.name) as string);
+            SideLabels = null;
             SideLabels = sideNames.ToArray();
+            DataContext = SideLabels;
+            DataContext = this;
             
         }
 
@@ -153,7 +168,8 @@ namespace Giros.Views
 
         private void initialiseDrinks()
         {
-            DrinkCollection = new SeriesCollection();
+            // DrinkCollection = new SeriesCollection();
+            DrinkCollection.Clear();
             var drinks = context.drinks.ToList();
             var values = new ChartValues<int>();
             foreach (var drink in drinks)
@@ -171,7 +187,10 @@ namespace Giros.Views
             List<String> drinkNames = new List<string>();
             foreach (var drink in drinks)
                 drinkNames.Add(Application.Current.FindResource(drink.name) as string);
+            DrinkLabels = null;
             DrinkLabels = drinkNames.ToArray();
+            DataContext = SideLabels;
+            DataContext = this;
         }
 
 
@@ -232,25 +251,14 @@ namespace Giros.Views
 
 
             Application.Current.Resources.MergedDictionaries.Add(resources);
-            //if (TypeCollection != null)
-            //    TypeCollection.Clear();
-            //if (SizeCollection != null)
-            //    SizeCollection.Clear();
-            //if (SideCollection != null)
-            //    SideCollection.Clear();
-            //if (DrinkCollection != null)
-            //    DrinkCollection.Clear();
-            //if (SideLabels != null)
-            //    SideLabels = null;
-            //if (DrinkLabels != null)
-            //    DrinkLabels = null;
 
 
-            DataContext = this;
+
             initializeType();
             initialiseSize();
             initialiseSides();
             initialiseDrinks();
+            DataContext = this;
             
             if (currUser!=null)
                 displayInfo(currUser.username);
@@ -326,7 +334,7 @@ namespace Giros.Views
            
             String name = (Application.Current.FindResource("Name") as string) + "\t" + staff.ime + "\n";
             String surname = (Application.Current.FindResource("Surname") as string) + "\t" + staff.prezime + "\n";
-            String workSince = (Application.Current.FindResource("Works Since") as string) + "\t" + staff.zaposlenOd.Date.ToShortDateString() + "\n";
+            String workSince = (Application.Current.FindResource("Works Since") as string) + " " + staff.zaposlenOd.Date.ToShortDateString() + "\n";
             string phone = (Application.Current.FindResource("Phone") as string) + "\t" + staff.brojTelefona + "\n";
             string paycheck = (Application.Current.FindResource("Paycheck") as string) + "\t" + staff.plata + "KM\n";
             string total = (Application.Current.FindResource("Total Orders") as string) + "\t" + staff.orders.Count + "\n";

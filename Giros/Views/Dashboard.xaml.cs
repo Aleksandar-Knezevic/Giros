@@ -613,11 +613,20 @@ namespace Giros.Views
             {
                 resources.Source = new Uri("/Resources/StringResources.Srb.xaml", UriKind.Relative);
             }
-                
 
+            string content = nextButton.Content.ToString() ;
 
 
             Application.Current.Resources.MergedDictionaries.Add(resources);
+
+
+            if(content.Equals("Kraj")||content.Equals("Finish"))
+                nextButton.Content = Application.Current.FindResource("Finish") as string;
+
+            if (content.Equals("Dalje") || content.Equals("Next")) ;
+                nextButton.Content = Application.Current.FindResource("Next") as string;
+            
+
 
             if (currId != 0)
                 displayInfo(currId);
