@@ -28,7 +28,7 @@
 
         <Canvas Background="Transparent" x:Name="exoticKruskaCanvas" Height="150" Width="150" Margin="534,10,191,402" MouseLeftButtonDown="exoticKruskaBackground" Uid="11">
             <Image Source="/Resources/images/exoticKruska.png" Height="174" Width="140" Canvas.Top="-24"/>
-            <Label Content="{DynamicResource Exotic Limeta}" Canvas.Left="40" Canvas.Top="126"></Label>
+            <Label Content="{DynamicResource Exotic Kruska}" Canvas.Left="40" Canvas.Top="126"></Label>
         </Canvas>
 
 
