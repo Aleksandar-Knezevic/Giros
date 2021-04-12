@@ -498,7 +498,7 @@ namespace Giros.Views
                 cijena = 4M;
             if (o.size.Equals("Medium"))
                 cijena = 6M;
-            else
+            if(o.size.Equals("Large"))
                 cijena = 8M;
             String type = (Application.Current.FindResource("Type") as string) + "\t" + (Application.Current.FindResource(o.type) as string) + "\n";
             String size = (Application.Current.FindResource("Size") as string) + "\t" + (Application.Current.FindResource(o.size) as string) + "\n";
