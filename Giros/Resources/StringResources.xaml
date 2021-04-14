@@ -56,4 +56,11 @@
     <system:String x:Key="Dark">Dark</system:String>
     <system:String x:Key="DarkRed">DarkRed</system:String>
     <system:String x:Key="NoOfOrders">Number of Orders</system:String>
+    <system:String x:Key="Add">Add staff</system:String>
+    <system:String x:Key="Username">Username</system:String>
+    <system:String x:Key="Password">Password</system:String>
+    <system:String x:Key="Save">Save</system:String>
+    <system:String x:Key="Edit">Edit</system:String>
+    <system:String x:Key="Delete">Delete</system:String>
+    <system:String x:Key="Taken">Username Taken</system:String>
 </ResourceDictionary>

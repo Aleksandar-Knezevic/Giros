@@ -68,11 +68,6 @@ namespace Giros.Model
             modelBuilder.Entity<staff>()
                 .Property(e => e.brojTelefona)
                 .IsUnicode(false);
-
-            modelBuilder.Entity<staff>()
-                .HasMany(e => e.orders)
-                .WithRequired(e => e.staff)
-                .WillCascadeOnDelete(false);
         }
     }
 }

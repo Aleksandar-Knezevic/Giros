@@ -54,7 +54,7 @@ namespace Giros
             String username = usernameBox.Text.Trim();
             String password = passwordBox.Password.Trim();
             var u = context.staffs.Where(e => e.username.Equals(username) && e.password.Equals(password));
-            if(u.Count()>0)
+            if(u.Count()>0 && u.First().isActive==1)
             {
                 if((bool)u.First().isAdmin)
                 {

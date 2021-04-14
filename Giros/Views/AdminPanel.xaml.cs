@@ -264,6 +264,7 @@ namespace Giros.Views
             initialiseSize();
             initialiseSides();
             initialiseDrinks();
+            initialiseStaff();
             DataContext = this;
             
             if (currUser!=null)
@@ -274,12 +275,72 @@ namespace Giros.Views
 
         private void initialiseStaff()
         {
-            var staff = context.staffs.ToList();
-            foreach (var s in staff)
+            if (myStackPanel != null)
             {
-                Grid g = createGrid(s.username);
-                myStackPanel.Children.Add(g);
+                context = new GyroDB();
+                var staff = context.staffs.Where(e => e.isActive == 1).ToList(); ;
+                myStackPanel.Children.Clear();
+                myStackPanel.Children.Add(createPlus());
+                foreach (var s in staff)
+                {
+                    Grid g = createGrid(s.username);
+                    myStackPanel.Children.Add(g);
+                }
             }
+        }
+
+        private void openAddUser()
+        {
+            AddStaff add = new AddStaff();
+            add.Closed += (sender, e) => initialiseStaff();
+            add.ShowDialog();
+            
+        }
+
+        private Grid createPlus()
+        {
+            Grid g = new Grid();
+            g.MouseLeftButtonDown += (sender, e) => openAddUser();
+            g.Width = 90;
+            g.Height = 110;
+            g.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString(Application.Current.FindResource("PrimaryHueDarkBrush").ToString()));
+            g.Margin = new Thickness(20, 0, 0, 0);
+
+
+
+
+
+
+            Label l = new Label();
+            // l.Margin = new Thickness(42, 40, 8, 38);
+            l.FontSize = 10;
+            l.Content = Application.Current.FindResource("Add");
+
+
+
+            Image im = new Image();
+            im.Source = new BitmapImage(new Uri("/Resources/images/plus.png", UriKind.Relative));
+            im.Width = 60;
+            im.Height = 80;
+            im.Margin = new Thickness(0, 15, 0, 0);
+
+
+            Border b = new Border();
+            b.BorderThickness = new Thickness(1);
+            b.BorderBrush = Brushes.Black;
+
+
+
+            g.Children.Add(im);
+            // g.Children.Add(b);
+            g.Children.Add(l);
+            g.Children.Add(b);
+            l.VerticalAlignment = VerticalAlignment.Bottom;
+            l.HorizontalAlignment = HorizontalAlignment.Center;
+            im.VerticalAlignment = VerticalAlignment.Top;
+            im.HorizontalAlignment = HorizontalAlignment.Center;
+
+            return g;
         }
 
 
@@ -354,6 +415,9 @@ namespace Giros.Views
                 staffInfoLabel.Content = racunString;
             });
 
+            editButton.Visibility = Visibility.Visible;
+            deleteButton.Visibility = Visibility.Visible;
+
         }
 
         private void BrushClicked(object sender, MouseButtonEventArgs e)
@@ -413,6 +477,31 @@ namespace Giros.Views
                 myStackPanel.Children.Clear();
                 initialiseStaff();
             }
+        }
+
+        private void Edit_Staff(object sender, RoutedEventArgs e)
+        {
+            EditStaff es = new EditStaff(currUser);
+            es.Closed += (a, b) =>
+            {
+                initialiseStaff();
+                staffInfoLabel.Content = "";
+                deleteButton.Visibility = Visibility.Hidden;
+                editButton.Visibility = Visibility.Hidden;
+            };
+            es.ShowDialog();
+        }
+
+        private void Delete_Staff(object sender, RoutedEventArgs e)
+        {
+            var curr = context.staffs.Find(currUser.id);
+            curr.isActive = 0;
+            context.SaveChanges();
+            currUser = null;
+            initialiseStaff();
+            staffInfoLabel.Content = "";
+            deleteButton.Visibility = Visibility.Hidden;
+            editButton.Visibility = Visibility.Hidden;
         }
     }
 

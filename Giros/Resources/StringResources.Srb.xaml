@@ -56,5 +56,12 @@
     <system:String x:Key="Dark">Tamna</system:String>
     <system:String x:Key="DarkRed">Crveno-Tamna</system:String>
     <system:String x:Key="NoOfOrders">Broj narudžbi</system:String>
+    <system:String x:Key="Add">Dodaj zaposlenog</system:String>
+    <system:String x:Key="Username">Korisničko ime</system:String>
+    <system:String x:Key="Password">Lozinka</system:String>
+    <system:String x:Key="Save">Sačuvaj</system:String>
+    <system:String x:Key="Edit">Izmijeni</system:String>
+    <system:String x:Key="Delete">Obriši</system:String>
+    <system:String x:Key="Taken">Zauzeto korisničko ime</system:String>
 
 </ResourceDictionary>

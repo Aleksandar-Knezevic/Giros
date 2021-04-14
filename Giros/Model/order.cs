@@ -26,7 +26,7 @@ namespace Giros.Model
         [StringLength(45)]
         public string type { get; set; }
 
-        public int staffId { get; set; }
+        public int? staffId { get; set; }
 
         [StringLength(45)]
         public string location { get; set; }

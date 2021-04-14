@@ -1,0 +1,56 @@
+﻿<Window x:Class="Giros.Views.EditStaff"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Giros.Views"
+        mc:Ignorable="d"
+        Title="AddStaff" Height="450" Width="390.088"
+        Background="{DynamicResource MaterialDesignPaper}"
+        FontFamily="{DynamicResource MaterialDesignFont}"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        Icon="/Resources/images/gyro.ico"
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes">
+    <Grid>
+        <ScrollViewer VerticalScrollBarVisibility="Auto">
+            <StackPanel Orientation="Vertical">
+                <Label Content="{DynamicResource Edit}" HorizontalAlignment="Center" FontSize="20" Margin="0 10 0 0"></Label>
+                <Label Content="{DynamicResource Taken}" HorizontalAlignment="Center" FontSize="16" Margin="0 10 0 0" FontWeight="Bold" Foreground="{DynamicResource PrimaryHueDarkBrush}" Visibility="Hidden" Name="takenLabel"></Label>
+                <Grid Margin="0 30 0 0">
+                    <Label Width="Auto" Height="Auto" Content="{DynamicResource Name}" VerticalAlignment="Center" Margin="20 0 0 0"/>
+                    <TextBox x:Name="nameTextBox" Width="120" Margin="10 ,24,0,25"/>
+                </Grid>
+
+                <Grid>
+                    <Label Width="Auto" Height="Auto" Content="{DynamicResource Surname}" VerticalAlignment="Center" Margin="20 0 0 0"/>
+                    <TextBox x:Name="surnameTextBox" Width="120" Margin="10 ,24,0,25"/>
+                </Grid>
+
+                <Grid>
+                    <Label Width="Auto" Height="Auto" Content="{DynamicResource Username}" VerticalAlignment="Center" Margin="20 0 0 0"/>
+                    <TextBox x:Name="usernameTextBox" Width="120" Margin="10 ,24,0,25"/>
+                </Grid>
+
+                <Grid>
+                    <Label Width="Auto" Height="Auto" Content="{DynamicResource Password}" VerticalAlignment="Center" Margin="20 0 0 0"/>
+                    <PasswordBox x:Name="passwordTextBox" Width="120" Margin="10 ,24,0,25"/>
+                </Grid>
+
+                <Grid>
+                    <Label Width="Auto" Height="Auto" Content="{DynamicResource Phone}" VerticalAlignment="Center" Margin="20 0 0 0"/>
+                    <TextBox x:Name="phoneTextBox" Width="120" Margin="10 ,24,0,25"/>
+                </Grid>
+
+                <Grid>
+                    <Label Width="Auto" Height="Auto" Content="{DynamicResource Paycheck}" VerticalAlignment="Center" Margin="20 0 0 0"/>
+                    <TextBox x:Name="paycheckTextBox" Width="120" Margin="10 ,24,0,25"/>
+                </Grid>
+
+                <Button Content="{DynamicResource Save}" Width="100" Margin="0 0 0 10" Click="Save_Click"></Button>
+            </StackPanel>
+        </ScrollViewer>
+
+    </Grid>
+</Window>

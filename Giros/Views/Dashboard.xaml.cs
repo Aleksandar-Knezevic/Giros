@@ -493,7 +493,7 @@ namespace Giros.Views
         {
             var o = await context.orders.FindAsync(i);
             currId = o.id;
-            decimal cijena;
+            decimal cijena=0M;
             if (o.size.Equals("Small"))
                 cijena = 4M;
             if (o.size.Equals("Medium"))

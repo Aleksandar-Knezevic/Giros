@@ -44,6 +44,8 @@ namespace Giros.Model
 
         public decimal plata { get; set; }
 
+        public sbyte isActive { get; set; }
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<order> orders { get; set; }
     }

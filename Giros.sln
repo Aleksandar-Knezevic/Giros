@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.31112.23
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Giros", "Giros\Giros.csproj", "{2D5F6BDD-F2CE-47F2-9997-CF4435E5D635}"
 EndProject
-Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "GirosInstaller", "GirosInstaller\GirosInstaller.vdproj", "{E0B10FD8-2015-4AB7-97EE-BA38125070E1}"
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Installer", "Installer\Installer.vdproj", "{015B13FA-95DD-44F4-888C-80531FB89223}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,8 +17,8 @@ Global
 		{2D5F6BDD-F2CE-47F2-9997-CF4435E5D635}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2D5F6BDD-F2CE-47F2-9997-CF4435E5D635}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2D5F6BDD-F2CE-47F2-9997-CF4435E5D635}.Release|Any CPU.Build.0 = Release|Any CPU
-		{E0B10FD8-2015-4AB7-97EE-BA38125070E1}.Debug|Any CPU.ActiveCfg = Debug
-		{E0B10FD8-2015-4AB7-97EE-BA38125070E1}.Release|Any CPU.ActiveCfg = Release
+		{015B13FA-95DD-44F4-888C-80531FB89223}.Debug|Any CPU.ActiveCfg = Debug
+		{015B13FA-95DD-44F4-888C-80531FB89223}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

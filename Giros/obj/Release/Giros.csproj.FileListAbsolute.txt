@@ -87,3 +87,7 @@ C:\Users\aleks\OneDrive\Radna površina\C#\Giros\Giros\obj\Release\Giros.csproj.
 C:\Users\aleks\OneDrive\Radna površina\C#\Giros\Giros\obj\Release\Giros.csproj.CopyComplete
 C:\Users\aleks\OneDrive\Radna površina\C#\Giros\Giros\obj\Release\Giros.exe
 C:\Users\aleks\OneDrive\Radna površina\C#\Giros\Giros\obj\Release\Giros.pdb
+C:\Users\aleks\OneDrive\Radna površina\C#\Giros\Giros\obj\Release\Views\AddStaff.g.cs
+C:\Users\aleks\OneDrive\Radna površina\C#\Giros\Giros\obj\Release\Views\EditStaff.g.cs
+C:\Users\aleks\OneDrive\Radna površina\C#\Giros\Giros\obj\Release\Views\AddStaff.baml
+C:\Users\aleks\OneDrive\Radna površina\C#\Giros\Giros\obj\Release\Views\EditStaff.baml

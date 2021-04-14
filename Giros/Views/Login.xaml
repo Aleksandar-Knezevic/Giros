@@ -18,6 +18,7 @@
         WindowStartupLocation="CenterScreen"
         Name="LoginWindow"
         Icon="/Resources/images/gyro.ico"
+        ResizeMode="NoResize"
         >
     <Grid>
         <Grid.ColumnDefinitions>
